@@ -4,6 +4,13 @@ Deliberately OUTSIDE python/src/, which is the generator's scaffold and is
 wiped on every run. Anything hand-written lives beside it, never inside it.
 """
 
+from .client import (  # noqa: F401
+    ENV_SERVER,
+    ENV_TOKEN,
+    connect,
+    disconnect,
+    get_connection,
+)
 from .credentials import (  # noqa: F401
     PAYLOAD_VERSION,
     CredentialError,

@@ -95,9 +95,35 @@ two SDKs share no code, so that test is the only thing preventing silent drift.
 `SecureString`. The token is a plain `str` in the process for as long as it is
 held. Mitigation is limited to short-lived references and never logging it.
 
-**Not yet wired together.** The generated client takes `access_token` as a
-string and `fogsdk_auth` stores one; nothing currently reads the store and
-hands it to `Configuration`. That is the obvious next piece.
+### Connecting
+
+```python
+from fogsdk_auth import connect
+import fogsdk
+
+with connect("fog.example.org") as client:
+    hosts = fogsdk.HostApi(client).host_list()
+```
+
+`connect()` resolves in the same order as `Connect-FgServer`:
+
+1. what you passed
+2. the environment — `FOG_SDK_SERVER` / `FOG_SDK_TOKEN`
+3. the credential store
+4. an error
+
+**It never prompts.** The PowerShell side has a hard no-prompt guarantee for
+non-interactive sessions because a prompt there hangs rather than fails; a
+library has no business prompting in any session. A token from the environment
+is never persisted — setting a variable should not write a secret to the
+machine.
+
+`keyring` is a **required** dependency (`fogsdk_auth/requirements.txt`), not an
+optional one. Its defensive import in `credentials.py` is a runtime fallback
+for a headless server with no D-Bus session. Without it installed on Windows,
+PowerShell picks Credential Manager while Python falls back to the file tier,
+and the two stop sharing a store **without saying so** — a token saved by one
+is simply invisible to the other.
 
 ## What else is deliberately missing
 

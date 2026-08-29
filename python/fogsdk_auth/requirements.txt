@@ -1,0 +1,11 @@
+# Dependencies of the credential layer, separate from the generated client's.
+#
+# keyring is REQUIRED, not optional, despite credentials.py importing it
+# defensively. The defensive import is a runtime fallback for a headless server
+# with no D-Bus session -- it is not permission to skip installing it.
+#
+# Without keyring on Windows the two SDKs diverge silently: PowerShell uses
+# Credential Manager (built in, no dependency) while Python falls back to the
+# file tier, so a token stored by one is invisible to the other and
+# "connect once with either SDK" quietly stops being true.
+keyring >= 24.0

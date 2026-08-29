@@ -43,6 +43,28 @@ Describe 'FogNativeStore.cs' {
         $code | Should -Not -Match 'ntsecapi'
     }
 
+    It 'encodes the credential blob as UTF-16, not UTF-8' {
+        # Interop-critical. Python's keyring uses WinVaultKeyring on Windows,
+        # which encodes the blob UTF-16LE. With UTF-8 here, keyring reads
+        # nothing back and this side reads keyring's values as characters
+        # separated by NULs -- PY_WROTE_THIS comes out as P Y _ W R O T E ...
+        # Neither direction errors; the credential is simply invisible to the
+        # other SDK.
+        # Scoped to the Credential Manager class deliberately. FogDpapiNg also
+        # encodes, but its blob never passes through keyring -- it is written
+        # and read by this SDK alone -- so its UTF-8 is self-consistent and
+        # correct. A file-wide prohibition would fail on it for no reason.
+        $src = Get-Content -Raw $script:CsPath
+        $credMan = [regex]::Match($src, '(?s)class FogCredentialManager.*?
+    \}').Value
+        $credMan | Should -Not -BeNullOrEmpty -Because 'the class must be findable for this assertion to mean anything'
+
+        $src     | Should -Match 'BlobEncoding\s*=\s*System\.Text\.Encoding\.Unicode'
+        $credMan | Should -Match 'BlobEncoding\.GetBytes'
+        $credMan | Should -Match 'BlobEncoding\.GetString'
+        $credMan | Should -Not -Match 'Encoding\.UTF8'
+    }
+
     It 'pins LOCAL_MACHINE persistence and never ENTERPRISE' {
         $src = Get-Content -Raw $script:CsPath
         $src | Should -Match 'CRED_PERSIST_LOCAL_MACHINE\s*=\s*2'

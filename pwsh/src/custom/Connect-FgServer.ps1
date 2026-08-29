@@ -29,9 +29,11 @@ function Connect-FgServer {
 
     .PARAMETER Server
     The FOG server, as a hostname or a URL. A bare hostname is assumed https.
+    May be omitted when FOG_SDK_SERVER is set.
 
     .PARAMETER Token
-    The bearer API token, as a SecureString.
+    The bearer API token, as a SecureString. May be omitted when FOG_SDK_TOKEN
+    is set, or when a credential is already stored for this server.
 
     .PARAMETER User
     The FOG username the token belongs to. Recorded alongside the credential so
@@ -57,10 +59,13 @@ function Connect-FgServer {
     and a human is present.
 
     .EXAMPLE
-    $t = ConvertTo-SecureString $env:FOG_TOKEN -AsPlainText -Force
-    Connect-FgServer -Server fog.example.org -Token $t -NoSave
+    $env:FOG_SDK_SERVER = 'fog.example.org'
+    $env:FOG_SDK_TOKEN  = '<token>'
+    Connect-FgServer
 
-    The CI shape: nothing touches disk.
+    The CI shape: nothing touches disk. An environment token is never written
+    to the credential store, so no -NoSave is needed. The Python client reads
+    the same two variables.
 
     .EXAMPLE
     Connect-FgServer -Server fog.example.org -Token (Read-Host -AsSecureString)
@@ -77,8 +82,7 @@ function Connect-FgServer {
     [CmdletBinding(SupportsShouldProcess, ConfirmImpact = 'Low')]
     [OutputType([System.Management.Automation.PSObject])]
     param(
-        [Parameter(Mandatory, Position = 0)]
-        [ValidateNotNullOrEmpty()]
+        [Parameter(Position = 0)]
         [string]${Server},
 
         [Parameter()]
@@ -95,6 +99,20 @@ function Connect-FgServer {
     )
 
     process {
+        # Resolution order, identical to the Python client's connect():
+        #   1. what the caller passed
+        #   2. the environment
+        #   3. the credential store
+        #   4. a prompt, but ONLY when a human is there
+        #   5. an error
+        #
+        # The environment half exists for CI, where -NoSave keeps the token out
+        # of the store but something still has to supply it.
+        if (-not $Server) { $Server = $env:FOG_SDK_SERVER }
+        if (-not $Server) {
+            throw 'No -Server given and FOG_SDK_SERVER is not set.'
+        }
+
         $uri = if ($Server -match '^[a-z][a-z0-9+.-]*://') { [uri]$Server } else { [uri]"https://$Server" }
         if (-not $uri.Host) { throw "Could not read a hostname from -Server '$Server'." }
 
@@ -104,7 +122,14 @@ function Connect-FgServer {
 
         $supplied = $PSBoundParameters.ContainsKey('Token')
 
-        if (-not $supplied) {
+        if (-not $supplied -and $env:FOG_SDK_TOKEN) {
+            $Token = ConvertTo-SecureString $env:FOG_SDK_TOKEN -AsPlainText -Force
+            # Treated as supplied-but-not-saved: an environment token is a CI
+            # affordance, and writing it to the machine's credential store
+            # would be a surprising side effect of setting a variable.
+            $fromEnv = $true
+        }
+        elseif (-not $supplied) {
             # Reconnect from the store before considering a prompt.
             $stored = Get-FogSdkSecret -Target $target -Account $account -Tier $tierRec.Tier
             if ($stored) {
@@ -137,7 +162,7 @@ saved by another account is not readable here and cannot be copied across.
             [FogSdk.FogConnection]::Set($uri, $Token, $User)
             [FogSdk.FogConnection]::Tier = $tierRec.Tier
 
-            if ($supplied -and -not $NoSave) {
+            if ($supplied -and -not $NoSave -and -not $fromEnv) {
                 $plain = [System.Net.NetworkCredential]::new('', $Token).Password
                 try {
                     $payload = New-FogSdkPayload -Server $uri.AbsoluteUri -Token $plain -User $User

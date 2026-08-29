@@ -36,9 +36,23 @@ namespace FogSdk
         // them under the roaming %APPDATA%.
         private const uint CRED_PERSIST_LOCAL_MACHINE = 2;
 
-        // CRED_MAX_CREDENTIAL_BLOB_SIZE. A fog_ token is 132 chars, so the
+        // CRED_MAX_CREDENTIAL_BLOB_SIZE, in BYTES. The payload is UTF-16, so
+        // this is 1280 characters, not 2560. A fog_ token is 132 chars, so the
         // versioned JSON payload has room, but a caller could still exceed it.
         private const int CRED_MAX_CREDENTIAL_BLOB_SIZE = 2560;
+
+        // UTF-16LE, NOT UTF-8, and this is interop-critical rather than a
+        // detail. Python's keyring uses WinVaultKeyring on Windows, which
+        // encodes the credential blob as UTF-16LE. Writing UTF-8 here means
+        // keyring reads nothing back and the PowerShell side reads keyring's
+        // values as characters separated by NULs -- "PY_WROTE_THIS" comes out
+        // as "P Y _ W R O T E _ T H I S".
+        //
+        // Both directions fail silently: no exception, just a credential the
+        // other SDK cannot see. It is also what Windows itself uses for
+        // credential blobs. Found by the cross-language test, which is the
+        // only thing that could have found it.
+        private static readonly System.Text.Encoding BlobEncoding = System.Text.Encoding.Unicode;
 
         [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
         private struct CREDENTIALW
@@ -74,7 +88,7 @@ namespace FogSdk
             if (string.IsNullOrEmpty(target)) throw new ArgumentNullException("target");
             if (secret == null) throw new ArgumentNullException("secret");
 
-            byte[] blob = System.Text.Encoding.UTF8.GetBytes(secret);
+            byte[] blob = BlobEncoding.GetBytes(secret);
             if (blob.Length > CRED_MAX_CREDENTIAL_BLOB_SIZE)
             {
                 throw new ArgumentException(string.Format(
@@ -121,7 +135,7 @@ namespace FogSdk
                 if (cred.CredentialBlobSize == 0) return string.Empty;
                 var blob = new byte[cred.CredentialBlobSize];
                 Marshal.Copy(cred.CredentialBlob, blob, 0, (int)cred.CredentialBlobSize);
-                try { return System.Text.Encoding.UTF8.GetString(blob); }
+                try { return BlobEncoding.GetString(blob); }
                 finally { Array.Clear(blob, 0, blob.Length); }
             }
             finally { CredFree(raw); }
