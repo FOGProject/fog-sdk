@@ -118,7 +118,10 @@ Write-Host 'done' -ForegroundColor Green
 if (Test-Path -LiteralPath $paths.Manifest) {
     Write-Host "  Import-Module '$($paths.Manifest)'" -ForegroundColor Gray
     Write-Host ''
-    Write-Host '  The generated cmdlets have no credential step yet, and unless the' -ForegroundColor Yellow
-    Write-Host '  document came from -Live the base URL is a placeholder. Reaching a' -ForegroundColor Yellow
-    Write-Host '  real server needs src/custom/Invoke-FogApi.cs, which is not written.' -ForegroundColor Yellow
+    Write-Host '  Connect-FgServer -Server <host> -Token (Read-Host -AsSecureString)' -ForegroundColor Gray
+    Write-Host ''
+    Write-Host '  Auth and the base URL are handled by Module.AfterCreatePipeline in' -ForegroundColor Gray
+    Write-Host '  src/custom/ModuleCustom.cs, so the placeholder host baked in from' -ForegroundColor Gray
+    Write-Host '  servers[0].url is rewritten per request and no cmdlet needs a' -ForegroundColor Gray
+    Write-Host '  -HttpPipelinePrepend argument.' -ForegroundColor Gray
 }
