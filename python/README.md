@@ -1,8 +1,8 @@
-# fogapi (Python) — planned
+# fogsdk (Python) — in progress
 
-Nothing here yet. The directory exists so the shape of the repo is obvious
-before the client is written: `fog-sdk` generates a client per language from
-one shared `spec/`, and `python/` mirrors `pwsh/`.
+The generated client is not written yet; the credential layer is — see below.
+`fog-sdk` generates one client per language from a single shared `spec/`, and
+`python/` mirrors `pwsh/`.
 
 ## Why a second client at all
 
@@ -42,5 +42,34 @@ and at least three will apply to any generator, not just AutoRest:
 - the base URL is baked in from `servers[0].url`, so generating from a live
   server's document is how a client learns which server it talks to
 
-Package name on PyPI is `fogapi`, per the naming decision: the module keeps its
-name in every ecosystem, following that ecosystem's casing.
+Package name on PyPI is `fogsdk`, following the same decision that made the
+PowerShell module `FogSdk` rather than `FogApi`: this is the SDK, not the
+friendly module built on it. `fogapi` would invite exactly the confusion the
+naming split exists to avoid.
+
+## What is written already
+
+`fogsdk_auth/` — the credential layer, hand-written and **outside `src/`**,
+because `src/` is the generator's scaffold and is wiped on every run.
+
+It implements the same contract as the PowerShell SDK so a token stored by
+either is readable by the other:
+
+```
+target  : fog-sdk:<host>, lower-cased
+payload : {"v":1,"server":...,"authKind":"bearer","token":...,"user":...}
+```
+
+Both reach the same OS store — Windows Credential Manager, macOS Keychain,
+libsecret — via `keyring`, and fall back to the same file, in the same place,
+with the same permissions, where none is available. `keyring` is an optional
+import: a headless FOG server usually has no D-Bus session, which is the common
+case for this client rather than an edge case.
+
+The contract is asserted by `pwsh/tests/Interop.Tests.ps1`, which round-trips a
+credential in both directions and checks the payloads are byte-identical. The
+two SDKs share no code, so that test is the only thing preventing silent drift.
+
+**One asymmetry, stated rather than papered over:** Python has no
+`SecureString`. The token is a plain `str` in the process for as long as it is
+held. Mitigation is limited to short-lived references and never logging it.
