@@ -82,6 +82,11 @@ Do not re-derive these. Each cost real time.
   including the SACL. Read and write the Access section only via
   `FileSystemAclExtensions`. FogApi's six-invocation `icacls` fallback exists to
   work around exactly this.
+- **Windows credential blobs are UTF-16LE, not UTF-8.** Python's `keyring`
+  uses `WinVaultKeyring`, which encodes the blob UTF-16LE. Writing UTF-8 makes
+  the credential invisible to the other SDK **in both directions, silently** --
+  no exception, just a value the other side reads as characters separated by
+  NULs. Only the cross-language test catches this.
 - **A minimal probe document generates in seconds**, versus ~12 minutes for the
   full run. Use one before proposing a document fix or testing generator
   behaviour.
@@ -118,6 +123,14 @@ Rules with tests behind them:
 - **Never prompt in a non-interactive session.** A prompt there does not fail, it
   hangs until something kills it. Any test that could hang must be bounded by a
   timeout.
+- **`keyring` is a required dependency of `fogsdk_auth`, not an optional one.**
+  Its defensive import is a runtime fallback for a headless server with no
+  D-Bus session. Without it installed, Windows PowerShell picks Credential
+  Manager while Python falls back to the file tier and the two stop sharing a
+  store without saying so.
+- **The environment contract is `FOG_SDK_SERVER` / `FOG_SDK_TOKEN`**, read by
+  both SDKs. A token from the environment is never persisted -- setting a
+  variable should not write a secret to the machine.
 - **No LSA private data.** Microsoft: "Do not use the LSA private data functions
   for generic data encryption and decryption." Its DACL admits every local
   administrator and reading requires elevation.

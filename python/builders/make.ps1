@@ -73,6 +73,17 @@ foreach ($stage in $run) {
             if (-not (Test-Path -LiteralPath $req)) { throw "No requirements.txt at $req. Run the Generate stage first." }
             & $venvPython -m pip install --quiet --disable-pip-version-check -r $req
             if ($LASTEXITCODE -ne 0) { throw "pip install failed (exit $LASTEXITCODE)." }
+
+            # The credential layer's own dependencies, which the generated
+            # client knows nothing about. keyring matters more than it looks:
+            # without it the Python side falls back to the file tier while
+            # PowerShell uses Credential Manager, and the two stop sharing a
+            # store without saying so.
+            $authReq = Join-Path $repoRoot 'python/fogsdk_auth/requirements.txt'
+            if (Test-Path -LiteralPath $authReq) {
+                & $venvPython -m pip install --quiet --disable-pip-version-check -r $authReq
+                if ($LASTEXITCODE -ne 0) { throw "pip install (fogsdk_auth) failed (exit $LASTEXITCODE)." }
+            }
             Write-Host "  venv ready: $venv" -ForegroundColor DarkGray
         }
         'Verify' {
