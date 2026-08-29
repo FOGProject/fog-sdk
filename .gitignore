@@ -22,6 +22,13 @@
 pwsh/src/*
 !pwsh/src/custom/
 
+# ...but custom/ still receives two GENERATED files, and the repo rule is that
+# generated output is not committed. AutoRest emits <Module>.custom.psm1 (its
+# own loader, which its README says not to modify) and a README describing the
+# folder. Both are recreated by every run.
+pwsh/src/custom/*.custom.psm1
+pwsh/src/custom/README.md
+
 # The scaffold's former output path, kept ignored deliberately. Moving the
 # output path without this un-ignored a stale generation in the predecessor
 # repo. Anyone passing -OutputFolder by hand can land here again.
