@@ -67,8 +67,11 @@ Notes that surprise people, all of them intentional server-side behaviour:
   account.
 - `Disconnect-FgServer` clears local state. It does **not** revoke anything.
 
-The older `fog-api-token` + `fog-user-token` header pair still works and is not
-deprecated, for FOG 1.5 and existing integrations.
+**This SDK is bearer-only.** The older `fog-api-token` + `fog-user-token`
+header pair still works against a FOG server and is not deprecated — but the
+SDK is generated from a 1.6 document and cannot describe a 1.5 server, so
+carrying a second credential shape would buy nothing.
+[FogApi](https://github.com/darksidemilk/FogApi) serves those users.
 
 ## Generating
 

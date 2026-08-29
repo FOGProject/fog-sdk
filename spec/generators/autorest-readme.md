@@ -105,4 +105,25 @@ directive:
   - rename-operation:
       from: Task_CreateTask
       to: TaskQueue_Create
+
+  # FOG's TaskRequest carries a `debug` field, which AutoRest expands into a
+  # -Debug parameter on the eight *Task cmdlets. That collides with
+  # PowerShell's common -Debug, and the collision is not cosmetic:
+  #
+  #   Get-Help New-FgHostTask     -> "A parameter with the name 'Debug' was
+  #                                   defined multiple times for the command."
+  #   (Get-Command New-FgHostTask).Parameters -> $null
+  #
+  # So parameter discovery and tab completion are broken for exactly the
+  # cmdlets that start imaging tasks, and the Help stage fails for the whole
+  # module because generate-help.ps1 calls Get-Help across the surface.
+  #
+  # Renamed on the cmdlet surface only. The document is NOT changed: `debug`
+  # is FOG's field name, it is a reasonable one, and the request body still
+  # sends `debug` on the wire. This is a client-side collision with a
+  # PowerShell reserved name, so it is fixed on the client.
+  - where:
+      parameter-name: Debug
+    set:
+      parameter-name: DebugMode
 ```

@@ -12,7 +12,10 @@
 
 $script:BuilderRoot = $PSScriptRoot
 $script:ClientRoot = Split-Path $PSScriptRoot -Parent
-$script:RepoRoot = Split-Path (Split-Path $script:ClientRoot -Parent) -Parent
+# <repo>/pwsh/builders -> <repo>/pwsh -> <repo>. Two levels, not three: the
+# clients sit at the top of this repo rather than under FogApi-clients/ as
+# they did when they lived inside FogApi.
+$script:RepoRoot = Split-Path $script:ClientRoot -Parent
 $script:ScaffoldPath = Join-Path $script:ClientRoot 'src'
 $script:SpecPath = Join-Path $script:RepoRoot 'spec'
 

@@ -1,4 +1,4 @@
-# FogApi public surface -- GENERATED, do not hand-edit.
+# FogSdk public surface -- GENERATED, do not hand-edit.
 #
 # Regenerate with spec/generators/Update-FogApiSurface.ps1 whenever a
 # surface change is intended, in the same commit as the change. CI runs
@@ -11,239 +11,239 @@
 
 # cmdlets: 474
 
-Clear-FogSettingsCache -> IPaths1MlribcSettingsCacheFlushPostResponses200ContentApplicationJsonSchema
+Clear-FgSettingsCache -> FogSdk.Models.IPaths1MlribcSettingsCacheFlushPostResponses200ContentApplicationJsonSchema
     -PassThru
-Export-FogSystem -> IError
+Export-FgSystem -> FogSdk.Models.IError
     -PassThru
-Find-FogArchitecture -> IArchitecturePage
+Find-FgArchitecture -> FogSdk.Models.IArchitecturePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogGroup -> IGroupPage
+Find-FgGroup -> FogSdk.Models.IGroupPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogHookEvent -> IHookEventPage
+Find-FgHookEvent -> FogSdk.Models.IHookEventPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogHost -> IHostPage
+Find-FgHost -> FogSdk.Models.IHostPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogImage -> IImagePage
+Find-FgImage -> FogSdk.Models.IImagePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogImagePartitionType -> IImagePartitionTypePage
+Find-FgImagePartitionType -> FogSdk.Models.IImagePartitionTypePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogImageType -> IImageTypePage
+Find-FgImageType -> FogSdk.Models.IImageTypePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogKeySequence -> IKeySequencePage
+Find-FgKeySequence -> FogSdk.Models.IKeySequencePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogModule -> IModulePage
+Find-FgModule -> FogSdk.Models.IModulePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogMulticastSession -> IMulticastSessionPage
+Find-FgMulticastSession -> FogSdk.Models.IMulticastSessionPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogNotifyEvent -> INotifyEventPage
+Find-FgNotifyEvent -> FogSdk.Models.INotifyEventPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogOS -> IOSPage
+Find-FgOS -> FogSdk.Models.IOSPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogOui -> IOuiPage
+Find-FgOui -> FogSdk.Models.IOuiPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogPlugin -> IPluginPage
+Find-FgPlugin -> FogSdk.Models.IPluginPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogPrinter -> IPrinterPage
+Find-FgPrinter -> FogSdk.Models.IPrinterPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogPxeMenuOption -> IPxeMenuOptionsPage
+Find-FgPxeMenuOption -> FogSdk.Models.IPxeMenuOptionsPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogRole -> IRolePage
+Find-FgRole -> FogSdk.Models.IRolePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogRolePermission -> IRolePermissionPage
+Find-FgRolePermission -> FogSdk.Models.IRolePermissionPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogRoleUserAssociation -> IRoleUserAssociationPage
+Find-FgRoleUserAssociation -> FogSdk.Models.IRoleUserAssociationPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogRoleUserGroupAssociation -> IRoleUserGroupAssociationPage
+Find-FgRoleUserGroupAssociation -> FogSdk.Models.IRoleUserGroupAssociationPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogScheduledTask -> IScheduledTaskPage
+Find-FgScheduledTask -> FogSdk.Models.IScheduledTaskPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogSetting -> ISettingPage
+Find-FgSetting -> FogSdk.Models.ISettingPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogSite -> ISitePage
+Find-FgSite -> FogSdk.Models.ISitePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogSnapin -> ISnapinPage
+Find-FgSnapin -> FogSdk.Models.ISnapinPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogStorageGroup -> IStorageGroupPage
+Find-FgStorageGroup -> FogSdk.Models.IStorageGroupPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogStorageNode -> IStorageNodePage
+Find-FgStorageNode -> FogSdk.Models.IStorageNodePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogSystem -> IAny
+Find-FgSystem -> FogSdk.Models.IAny
     -InputObject*
     -Item*
     -PassThru
-Find-FogTask -> ITaskPage
-    -Expand
-    -InputObject*
-    -Item*
-    -Length
-    -PassThru
-    -Start
-Find-FogTaskState -> ITaskStatePage
+Find-FgTask -> FogSdk.Models.ITaskPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogTaskType -> ITaskTypePage
+Find-FgTaskState -> FogSdk.Models.ITaskStatePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogUser -> IUserPage
+Find-FgTaskType -> FogSdk.Models.ITaskTypePage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogUserGroup -> IUserGroupPage
+Find-FgUser -> FogSdk.Models.IUserPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Find-FogUserGroupMember -> IUserGroupMemberPage
+Find-FgUserGroup -> FogSdk.Models.IUserGroupPage
     -Expand
     -InputObject*
     -Item*
     -Length
     -PassThru
     -Start
-Get-FogArchitecture -> IArchitecture, IArchitecturePage
+Find-FgUserGroupMember -> FogSdk.Models.IUserGroupMemberPage
+    -Expand
+    -InputObject*
+    -Item*
+    -Length
+    -PassThru
+    -Start
+Get-FgArchitecture -> FogSdk.Models.IArchitecture, FogSdk.Models.IArchitecturePage
     -Expand
     -Filter
     -Id*
@@ -251,13 +251,13 @@ Get-FogArchitecture -> IArchitecture, IArchitecturePage
     -Length
     -PassThru
     -Start
-Get-FogArchitectureId -> IValueList
+Get-FgArchitectureId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogArchitectureName -> IValueList
+Get-FgArchitectureName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogFileDeleteQueue -> IFileDeleteQueue, IFileDeleteQueuePage
+Get-FgFileDeleteQueue -> FogSdk.Models.IFileDeleteQueue, FogSdk.Models.IFileDeleteQueuePage
     -Expand
     -Filter
     -Id*
@@ -265,15 +265,15 @@ Get-FogFileDeleteQueue -> IFileDeleteQueue, IFileDeleteQueuePage
     -Length
     -PassThru
     -Start
-Get-FogFileDeleteQueueActive -> IFileDeleteQueuePage
+Get-FgFileDeleteQueueActive -> FogSdk.Models.IFileDeleteQueuePage
     -PassThru
-Get-FogFileDeleteQueueId -> IValueList
+Get-FgFileDeleteQueueId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogFileDeleteQueueName -> IValueList
+Get-FgFileDeleteQueueName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogGroup -> IGroup, IGroupPage
+Get-FgGroup -> FogSdk.Models.IGroup, FogSdk.Models.IGroupPage
     -Expand
     -Filter
     -Id*
@@ -281,7 +281,7 @@ Get-FogGroup -> IGroup, IGroupPage
     -Length
     -PassThru
     -Start
-Get-FogGroupAssociation -> IGroupAssociation, IGroupAssociationPage
+Get-FgGroupAssociation -> FogSdk.Models.IGroupAssociation, FogSdk.Models.IGroupAssociationPage
     -Expand
     -Filter
     -Id*
@@ -289,19 +289,19 @@ Get-FogGroupAssociation -> IGroupAssociation, IGroupAssociationPage
     -Length
     -PassThru
     -Start
-Get-FogGroupAssociationId -> IValueList
+Get-FgGroupAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogGroupAssociationName -> IValueList
+Get-FgGroupAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogGroupId -> IValueList
+Get-FgGroupId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogGroupName -> IValueList
+Get-FgGroupName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHistory -> IHistory, IHistoryPage
+Get-FgHistory -> FogSdk.Models.IHistory, FogSdk.Models.IHistoryPage
     -Expand
     -Filter
     -Id*
@@ -309,13 +309,13 @@ Get-FogHistory -> IHistory, IHistoryPage
     -Length
     -PassThru
     -Start
-Get-FogHistoryId -> IValueList
+Get-FgHistoryId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHistoryName -> IValueList
+Get-FgHistoryName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHookEvent -> IHookEvent, IHookEventPage
+Get-FgHookEvent -> FogSdk.Models.IHookEvent, FogSdk.Models.IHookEventPage
     -Expand
     -Filter
     -Id*
@@ -323,13 +323,13 @@ Get-FogHookEvent -> IHookEvent, IHookEventPage
     -Length
     -PassThru
     -Start
-Get-FogHookEventId -> IValueList
+Get-FgHookEventId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHookEventName -> IValueList
+Get-FgHookEventName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHost -> IHost, IHostPage
+Get-FgHost -> FogSdk.Models.IHost, FogSdk.Models.IHostPage
     -Expand
     -Filter
     -Id*
@@ -337,7 +337,7 @@ Get-FogHost -> IHost, IHostPage
     -Length
     -PassThru
     -Start
-Get-FogHostAutoLogout -> IHostAutoLogout, IHostAutoLogoutPage
+Get-FgHostAutoLogout -> FogSdk.Models.IHostAutoLogout, FogSdk.Models.IHostAutoLogoutPage
     -Expand
     -Filter
     -Id*
@@ -345,21 +345,21 @@ Get-FogHostAutoLogout -> IHostAutoLogout, IHostAutoLogoutPage
     -Length
     -PassThru
     -Start
-Get-FogHostAutoLogoutId -> IValueList
+Get-FgHostAutoLogoutId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHostAutoLogoutName -> IValueList
+Get-FgHostAutoLogoutName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHostId -> IValueList
+Get-FgHostId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHostName -> IValueList
+Get-FgHostName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHostPendingMac -> IMacAddressAssociationPage
+Get-FgHostPendingMac -> FogSdk.Models.IMacAddressAssociationPage
     -PassThru
-Get-FogHostScreenSetting -> IHostScreenSetting, IHostScreenSettingPage
+Get-FgHostScreenSetting -> FogSdk.Models.IHostScreenSetting, FogSdk.Models.IHostScreenSettingPage
     -Expand
     -Filter
     -Id*
@@ -367,13 +367,13 @@ Get-FogHostScreenSetting -> IHostScreenSetting, IHostScreenSettingPage
     -Length
     -PassThru
     -Start
-Get-FogHostScreenSettingId -> IValueList
+Get-FgHostScreenSettingId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogHostScreenSettingName -> IValueList
+Get-FgHostScreenSettingName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogImage -> IImage, IImagePage
+Get-FgImage -> FogSdk.Models.IImage, FogSdk.Models.IImagePage
     -Expand
     -Filter
     -Id*
@@ -381,7 +381,7 @@ Get-FogImage -> IImage, IImagePage
     -Length
     -PassThru
     -Start
-Get-FogImageAssociation -> IImageAssociation, IImageAssociationPage
+Get-FgImageAssociation -> FogSdk.Models.IImageAssociation, FogSdk.Models.IImageAssociationPage
     -Expand
     -Filter
     -Id*
@@ -389,19 +389,19 @@ Get-FogImageAssociation -> IImageAssociation, IImageAssociationPage
     -Length
     -PassThru
     -Start
-Get-FogImageAssociationId -> IValueList
+Get-FgImageAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogImageAssociationName -> IValueList
+Get-FgImageAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogImageId -> IValueList
+Get-FgImageId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogImageName -> IValueList
+Get-FgImageName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogImagePartitionType -> IImagePartitionType, IImagePartitionTypePage
+Get-FgImagePartitionType -> FogSdk.Models.IImagePartitionType, FogSdk.Models.IImagePartitionTypePage
     -Expand
     -Filter
     -Id*
@@ -409,13 +409,13 @@ Get-FogImagePartitionType -> IImagePartitionType, IImagePartitionTypePage
     -Length
     -PassThru
     -Start
-Get-FogImagePartitionTypeId -> IValueList
+Get-FgImagePartitionTypeId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogImagePartitionTypeName -> IValueList
+Get-FgImagePartitionTypeName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogImageType -> IImageType, IImageTypePage
+Get-FgImageType -> FogSdk.Models.IImageType, FogSdk.Models.IImageTypePage
     -Expand
     -Filter
     -Id*
@@ -423,15 +423,15 @@ Get-FogImageType -> IImageType, IImageTypePage
     -Length
     -PassThru
     -Start
-Get-FogImageTypeId -> IValueList
+Get-FgImageTypeId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogImageTypeName -> IValueList
+Get-FgImageTypeName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogInitrd -> IValueList
+Get-FgInitrd -> FogSdk.Models.IValueList
     -PassThru
-Get-FogInventory -> IInventory, IInventoryPage
+Get-FgInventory -> FogSdk.Models.IInventory, FogSdk.Models.IInventoryPage
     -Expand
     -Filter
     -Id*
@@ -439,13 +439,13 @@ Get-FogInventory -> IInventory, IInventoryPage
     -Length
     -PassThru
     -Start
-Get-FogInventoryId -> IValueList
+Get-FgInventoryId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogInventoryName -> IValueList
+Get-FgInventoryName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogIpxe -> IIpxe, IIpxePage
+Get-FgIpxe -> FogSdk.Models.IIpxe, FogSdk.Models.IIpxePage
     -Expand
     -Filter
     -Id*
@@ -453,15 +453,15 @@ Get-FogIpxe -> IIpxe, IIpxePage
     -Length
     -PassThru
     -Start
-Get-FogIpxeId -> IValueList
+Get-FgIpxeId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogIpxeName -> IValueList
+Get-FgIpxeName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogKernel -> IValueList
+Get-FgKernel -> FogSdk.Models.IValueList
     -PassThru
-Get-FogKeySequence -> IKeySequence, IKeySequencePage
+Get-FgKeySequence -> FogSdk.Models.IKeySequence, FogSdk.Models.IKeySequencePage
     -Expand
     -Filter
     -Id*
@@ -469,17 +469,17 @@ Get-FogKeySequence -> IKeySequence, IKeySequencePage
     -Length
     -PassThru
     -Start
-Get-FogKeySequenceId -> IValueList
+Get-FgKeySequenceId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogKeySequenceName -> IValueList
+Get-FgKeySequenceName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogLogfile -> IAny
+Get-FgLogfile -> FogSdk.Models.IAny
     -Id*
     -InputObject*
     -PassThru
-Get-FogMacAddressAssociation -> IMacAddressAssociation, IMacAddressAssociationPage
+Get-FgMacAddressAssociation -> FogSdk.Models.IMacAddressAssociation, FogSdk.Models.IMacAddressAssociationPage
     -Expand
     -Filter
     -Id*
@@ -487,13 +487,13 @@ Get-FogMacAddressAssociation -> IMacAddressAssociation, IMacAddressAssociationPa
     -Length
     -PassThru
     -Start
-Get-FogMacAddressAssociationId -> IValueList
+Get-FgMacAddressAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogMacAddressAssociationName -> IValueList
+Get-FgMacAddressAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogModule -> IModule, IModulePage
+Get-FgModule -> FogSdk.Models.IModule, FogSdk.Models.IModulePage
     -Expand
     -Filter
     -Id*
@@ -501,7 +501,7 @@ Get-FogModule -> IModule, IModulePage
     -Length
     -PassThru
     -Start
-Get-FogModuleAssociation -> IModuleAssociation, IModuleAssociationPage
+Get-FgModuleAssociation -> FogSdk.Models.IModuleAssociation, FogSdk.Models.IModuleAssociationPage
     -Expand
     -Filter
     -Id*
@@ -509,19 +509,19 @@ Get-FogModuleAssociation -> IModuleAssociation, IModuleAssociationPage
     -Length
     -PassThru
     -Start
-Get-FogModuleAssociationId -> IValueList
+Get-FgModuleAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogModuleAssociationName -> IValueList
+Get-FgModuleAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogModuleId -> IValueList
+Get-FgModuleId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogModuleName -> IValueList
+Get-FgModuleName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogMulticastSession -> IMulticastSession, IMulticastSessionPage
+Get-FgMulticastSession -> FogSdk.Models.IMulticastSession, FogSdk.Models.IMulticastSessionPage
     -Expand
     -Filter
     -Id*
@@ -529,9 +529,9 @@ Get-FogMulticastSession -> IMulticastSession, IMulticastSessionPage
     -Length
     -PassThru
     -Start
-Get-FogMulticastSessionActive -> IMulticastSessionPage
+Get-FgMulticastSessionActive -> FogSdk.Models.IMulticastSessionPage
     -PassThru
-Get-FogMulticastSessionAssociation -> IMulticastSessionAssociation, IMulticastSessionAssociationPage
+Get-FgMulticastSessionAssociation -> FogSdk.Models.IMulticastSessionAssociation, FogSdk.Models.IMulticastSessionAssociationPage
     -Expand
     -Filter
     -Id*
@@ -539,19 +539,19 @@ Get-FogMulticastSessionAssociation -> IMulticastSessionAssociation, IMulticastSe
     -Length
     -PassThru
     -Start
-Get-FogMulticastSessionAssociationId -> IValueList
+Get-FgMulticastSessionAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogMulticastSessionAssociationName -> IValueList
+Get-FgMulticastSessionAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogMulticastSessionId -> IValueList
+Get-FgMulticastSessionId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogMulticastSessionName -> IValueList
+Get-FgMulticastSessionName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogNodeFailure -> INodeFailure, INodeFailurePage
+Get-FgNodeFailure -> FogSdk.Models.INodeFailure, FogSdk.Models.INodeFailurePage
     -Expand
     -Filter
     -Id*
@@ -559,13 +559,13 @@ Get-FogNodeFailure -> INodeFailure, INodeFailurePage
     -Length
     -PassThru
     -Start
-Get-FogNodeFailureId -> IValueList
+Get-FgNodeFailureId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogNodeFailureName -> IValueList
+Get-FgNodeFailureName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogNotifyEvent -> INotifyEvent, INotifyEventPage
+Get-FgNotifyEvent -> FogSdk.Models.INotifyEvent, FogSdk.Models.INotifyEventPage
     -Expand
     -Filter
     -Id*
@@ -573,13 +573,13 @@ Get-FogNotifyEvent -> INotifyEvent, INotifyEventPage
     -Length
     -PassThru
     -Start
-Get-FogNotifyEventId -> IValueList
+Get-FgNotifyEventId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogNotifyEventName -> IValueList
+Get-FgNotifyEventName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogOS -> IOS, IOSPage
+Get-FgOS -> FogSdk.Models.IOS, FogSdk.Models.IOSPage
     -Expand
     -Filter
     -Id*
@@ -587,13 +587,13 @@ Get-FogOS -> IOS, IOSPage
     -Length
     -PassThru
     -Start
-Get-FogOSId -> IValueList
+Get-FgOSId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogOSName -> IValueList
+Get-FgOSName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogOui -> IOui, IOuiPage
+Get-FgOui -> FogSdk.Models.IOui, FogSdk.Models.IOuiPage
     -Expand
     -Filter
     -Id*
@@ -601,13 +601,13 @@ Get-FogOui -> IOui, IOuiPage
     -Length
     -PassThru
     -Start
-Get-FogOuiId -> IValueList
+Get-FgOuiId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogOuiName -> IValueList
+Get-FgOuiName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPlugin -> IPlugin, IPluginPage
+Get-FgPlugin -> FogSdk.Models.IPlugin, FogSdk.Models.IPluginPage
     -Expand
     -Filter
     -Id*
@@ -615,13 +615,13 @@ Get-FogPlugin -> IPlugin, IPluginPage
     -Length
     -PassThru
     -Start
-Get-FogPluginId -> IValueList
+Get-FgPluginId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPluginName -> IValueList
+Get-FgPluginName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPowerManagement -> IPowerManagement, IPowerManagementPage
+Get-FgPowerManagement -> FogSdk.Models.IPowerManagement, FogSdk.Models.IPowerManagementPage
     -Expand
     -Filter
     -Id*
@@ -629,15 +629,15 @@ Get-FogPowerManagement -> IPowerManagement, IPowerManagementPage
     -Length
     -PassThru
     -Start
-Get-FogPowerManagementActive -> IPowerManagementPage
+Get-FgPowerManagementActive -> FogSdk.Models.IPowerManagementPage
     -PassThru
-Get-FogPowerManagementId -> IValueList
+Get-FgPowerManagementId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPowerManagementName -> IValueList
+Get-FgPowerManagementName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPrinter -> IPrinter, IPrinterPage
+Get-FgPrinter -> FogSdk.Models.IPrinter, FogSdk.Models.IPrinterPage
     -Expand
     -Filter
     -Id*
@@ -645,7 +645,7 @@ Get-FogPrinter -> IPrinter, IPrinterPage
     -Length
     -PassThru
     -Start
-Get-FogPrinterAssociation -> IPrinterAssociation, IPrinterAssociationPage
+Get-FgPrinterAssociation -> FogSdk.Models.IPrinterAssociation, FogSdk.Models.IPrinterAssociationPage
     -Expand
     -Filter
     -Id*
@@ -653,19 +653,19 @@ Get-FogPrinterAssociation -> IPrinterAssociation, IPrinterAssociationPage
     -Length
     -PassThru
     -Start
-Get-FogPrinterAssociationId -> IValueList
+Get-FgPrinterAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPrinterAssociationName -> IValueList
+Get-FgPrinterAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPrinterId -> IValueList
+Get-FgPrinterId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPrinterName -> IValueList
+Get-FgPrinterName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPxeMenuOption -> IPxeMenuOptions, IPxeMenuOptionsPage
+Get-FgPxeMenuOption -> FogSdk.Models.IPxeMenuOptions, FogSdk.Models.IPxeMenuOptionsPage
     -Expand
     -Filter
     -Id*
@@ -673,13 +673,13 @@ Get-FogPxeMenuOption -> IPxeMenuOptions, IPxeMenuOptionsPage
     -Length
     -PassThru
     -Start
-Get-FogPxeMenuOptionId -> IValueList
+Get-FgPxeMenuOptionId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogPxeMenuOptionName -> IValueList
+Get-FgPxeMenuOptionName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogRole -> IRole, IRolePage
+Get-FgRole -> FogSdk.Models.IRole, FogSdk.Models.IRolePage
     -Expand
     -Filter
     -Id*
@@ -687,13 +687,13 @@ Get-FogRole -> IRole, IRolePage
     -Length
     -PassThru
     -Start
-Get-FogRoleId -> IValueList
+Get-FgRoleId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogRoleName -> IValueList
+Get-FgRoleName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogRolePermission -> IRolePermission, IRolePermissionPage
+Get-FgRolePermission -> FogSdk.Models.IRolePermission, FogSdk.Models.IRolePermissionPage
     -Expand
     -Filter
     -Id*
@@ -701,13 +701,13 @@ Get-FogRolePermission -> IRolePermission, IRolePermissionPage
     -Length
     -PassThru
     -Start
-Get-FogRolePermissionId -> IValueList
+Get-FgRolePermissionId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogRolePermissionName -> IValueList
+Get-FgRolePermissionName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogRoleUserAssociation -> IRoleUserAssociation, IRoleUserAssociationPage
+Get-FgRoleUserAssociation -> FogSdk.Models.IRoleUserAssociation, FogSdk.Models.IRoleUserAssociationPage
     -Expand
     -Filter
     -Id*
@@ -715,13 +715,13 @@ Get-FogRoleUserAssociation -> IRoleUserAssociation, IRoleUserAssociationPage
     -Length
     -PassThru
     -Start
-Get-FogRoleUserAssociationId -> IValueList
+Get-FgRoleUserAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogRoleUserAssociationName -> IValueList
+Get-FgRoleUserAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogRoleUserGroupAssociation -> IRoleUserGroupAssociation, IRoleUserGroupAssociationPage
+Get-FgRoleUserGroupAssociation -> FogSdk.Models.IRoleUserGroupAssociation, FogSdk.Models.IRoleUserGroupAssociationPage
     -Expand
     -Filter
     -Id*
@@ -729,13 +729,13 @@ Get-FogRoleUserGroupAssociation -> IRoleUserGroupAssociation, IRoleUserGroupAsso
     -Length
     -PassThru
     -Start
-Get-FogRoleUserGroupAssociationId -> IValueList
+Get-FgRoleUserGroupAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogRoleUserGroupAssociationName -> IValueList
+Get-FgRoleUserGroupAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogScheduledTask -> IScheduledTask, IScheduledTaskPage
+Get-FgScheduledTask -> FogSdk.Models.IScheduledTask, FogSdk.Models.IScheduledTaskPage
     -Expand
     -Filter
     -Id*
@@ -743,15 +743,15 @@ Get-FogScheduledTask -> IScheduledTask, IScheduledTaskPage
     -Length
     -PassThru
     -Start
-Get-FogScheduledTaskActive -> IScheduledTaskPage
+Get-FgScheduledTaskActive -> FogSdk.Models.IScheduledTaskPage
     -PassThru
-Get-FogScheduledTaskId -> IValueList
+Get-FgScheduledTaskId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogScheduledTaskName -> IValueList
+Get-FgScheduledTaskName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSetting -> ISetting, ISettingPage
+Get-FgSetting -> FogSdk.Models.ISetting, FogSdk.Models.ISettingPage
     -Expand
     -Filter
     -Id*
@@ -759,15 +759,15 @@ Get-FogSetting -> ISetting, ISettingPage
     -Length
     -PassThru
     -Start
-Get-FogSettingId -> IValueList
+Get-FgSettingId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSettingName -> IValueList
+Get-FgSettingName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSettingsCache -> IAny
+Get-FgSettingsCache -> FogSdk.Models.IAny
     -PassThru
-Get-FogSite -> ISite, ISitePage
+Get-FgSite -> FogSdk.Models.ISite, FogSdk.Models.ISitePage
     -Expand
     -Filter
     -Id*
@@ -775,13 +775,13 @@ Get-FogSite -> ISite, ISitePage
     -Length
     -PassThru
     -Start
-Get-FogSiteId -> IValueList
+Get-FgSiteId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSiteName -> IValueList
+Get-FgSiteName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapin -> ISnapin, ISnapinPage
+Get-FgSnapin -> FogSdk.Models.ISnapin, FogSdk.Models.ISnapinPage
     -Expand
     -Filter
     -Id*
@@ -789,7 +789,7 @@ Get-FogSnapin -> ISnapin, ISnapinPage
     -Length
     -PassThru
     -Start
-Get-FogSnapinAssociation -> ISnapinAssociation, ISnapinAssociationPage
+Get-FgSnapinAssociation -> FogSdk.Models.ISnapinAssociation, FogSdk.Models.ISnapinAssociationPage
     -Expand
     -Filter
     -Id*
@@ -797,13 +797,13 @@ Get-FogSnapinAssociation -> ISnapinAssociation, ISnapinAssociationPage
     -Length
     -PassThru
     -Start
-Get-FogSnapinAssociationId -> IValueList
+Get-FgSnapinAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinAssociationName -> IValueList
+Get-FgSnapinAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinGroupAssociation -> ISnapinGroupAssociation, ISnapinGroupAssociationPage
+Get-FgSnapinGroupAssociation -> FogSdk.Models.ISnapinGroupAssociation, FogSdk.Models.ISnapinGroupAssociationPage
     -Expand
     -Filter
     -Id*
@@ -811,16 +811,16 @@ Get-FogSnapinGroupAssociation -> ISnapinGroupAssociation, ISnapinGroupAssociatio
     -Length
     -PassThru
     -Start
-Get-FogSnapinGroupAssociationId -> IValueList
+Get-FgSnapinGroupAssociationId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinGroupAssociationName -> IValueList
+Get-FgSnapinGroupAssociationName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinId -> IValueList
+Get-FgSnapinId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinJob -> ISnapinJob, ISnapinJobPage
+Get-FgSnapinJob -> FogSdk.Models.ISnapinJob, FogSdk.Models.ISnapinJobPage
     -Expand
     -Filter
     -Id*
@@ -828,18 +828,18 @@ Get-FogSnapinJob -> ISnapinJob, ISnapinJobPage
     -Length
     -PassThru
     -Start
-Get-FogSnapinJobActive -> ISnapinJobPage
+Get-FgSnapinJobActive -> FogSdk.Models.ISnapinJobPage
     -PassThru
-Get-FogSnapinJobId -> IValueList
+Get-FgSnapinJobId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinJobName -> IValueList
+Get-FgSnapinJobName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinName -> IValueList
+Get-FgSnapinName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinTask -> ISnapinTask, ISnapinTaskPage
+Get-FgSnapinTask -> FogSdk.Models.ISnapinTask, FogSdk.Models.ISnapinTaskPage
     -Expand
     -Filter
     -Id*
@@ -847,15 +847,15 @@ Get-FogSnapinTask -> ISnapinTask, ISnapinTaskPage
     -Length
     -PassThru
     -Start
-Get-FogSnapinTaskActive -> ISnapinTaskPage
+Get-FgSnapinTaskActive -> FogSdk.Models.ISnapinTaskPage
     -PassThru
-Get-FogSnapinTaskId -> IValueList
+Get-FgSnapinTaskId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSnapinTaskName -> IValueList
+Get-FgSnapinTaskName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogStorageGroup -> IStorageGroup, IStorageGroupPage
+Get-FgStorageGroup -> FogSdk.Models.IStorageGroup, FogSdk.Models.IStorageGroupPage
     -Expand
     -Filter
     -Id*
@@ -863,13 +863,13 @@ Get-FogStorageGroup -> IStorageGroup, IStorageGroupPage
     -Length
     -PassThru
     -Start
-Get-FogStorageGroupId -> IValueList
+Get-FgStorageGroupId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogStorageGroupName -> IValueList
+Get-FgStorageGroupName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogStorageNode -> IStorageNode, IStorageNodePage
+Get-FgStorageNode -> FogSdk.Models.IStorageNode, FogSdk.Models.IStorageNodePage
     -Expand
     -Filter
     -Id*
@@ -877,23 +877,23 @@ Get-FogStorageNode -> IStorageNode, IStorageNodePage
     -Length
     -PassThru
     -Start
-Get-FogStorageNodeId -> IValueList
+Get-FgStorageNodeId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogStorageNodeName -> IValueList
+Get-FgStorageNodeName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogSystemBandwidth -> IAny
+Get-FgSystemBandwidth -> FogSdk.Models.IAny
     -Dev*
     -InputObject*
     -PassThru
-Get-FogSystemInfo -> IPaths1Rcxoc7SystemInfoGetResponses200ContentApplicationJsonSchema
+Get-FgSystemInfo -> FogSdk.Models.IPaths1Rcxoc7SystemInfoGetResponses200ContentApplicationJsonSchema
     -PassThru
-Get-FogSystemOpenapi -> IAny
+Get-FgSystemOpenapi -> FogSdk.Models.IAny
     -PassThru
-Get-FogSystemWhoami -> IPathsS2163KWhoamiGetResponses200ContentApplicationJsonSchema
+Get-FgSystemWhoami -> FogSdk.Models.IPathsS2163KWhoamiGetResponses200ContentApplicationJsonSchema
     -PassThru
-Get-FogTask -> ITask, ITaskPage
+Get-FgTask -> FogSdk.Models.ITask, FogSdk.Models.ITaskPage
     -Expand
     -Filter
     -Id*
@@ -901,12 +901,12 @@ Get-FogTask -> ITask, ITaskPage
     -Length
     -PassThru
     -Start
-Get-FogTaskActive -> ITaskPage
+Get-FgTaskActive -> FogSdk.Models.ITaskPage
     -PassThru
-Get-FogTaskId -> IValueList
+Get-FgTaskId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogTaskLog -> ITaskLog, ITaskLogPage
+Get-FgTaskLog -> FogSdk.Models.ITaskLog, FogSdk.Models.ITaskLogPage
     -Expand
     -Filter
     -Id*
@@ -914,16 +914,16 @@ Get-FogTaskLog -> ITaskLog, ITaskLogPage
     -Length
     -PassThru
     -Start
-Get-FogTaskLogId -> IValueList
+Get-FgTaskLogId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogTaskLogName -> IValueList
+Get-FgTaskLogName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogTaskName -> IValueList
+Get-FgTaskName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogTaskState -> ITaskState, ITaskStatePage
+Get-FgTaskState -> FogSdk.Models.ITaskState, FogSdk.Models.ITaskStatePage
     -Expand
     -Filter
     -Id*
@@ -931,13 +931,13 @@ Get-FogTaskState -> ITaskState, ITaskStatePage
     -Length
     -PassThru
     -Start
-Get-FogTaskStateId -> IValueList
+Get-FgTaskStateId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogTaskStateName -> IValueList
+Get-FgTaskStateName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogTaskType -> ITaskType1, ITaskTypePage
+Get-FgTaskType -> FogSdk.Models.ITaskType1, FogSdk.Models.ITaskTypePage
     -Expand
     -Filter
     -Id*
@@ -945,13 +945,13 @@ Get-FogTaskType -> ITaskType1, ITaskTypePage
     -Length
     -PassThru
     -Start
-Get-FogTaskTypeId -> IValueList
+Get-FgTaskTypeId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogTaskTypeName -> IValueList
+Get-FgTaskTypeName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogUser -> IUser, IUserPage
+Get-FgUser -> FogSdk.Models.IUser, FogSdk.Models.IUserPage
     -Expand
     -Filter
     -Id*
@@ -959,7 +959,7 @@ Get-FogUser -> IUser, IUserPage
     -Length
     -PassThru
     -Start
-Get-FogUserGroup -> IUserGroup, IUserGroupPage
+Get-FgUserGroup -> FogSdk.Models.IUserGroup, FogSdk.Models.IUserGroupPage
     -Expand
     -Filter
     -Id*
@@ -967,10 +967,10 @@ Get-FogUserGroup -> IUserGroup, IUserGroupPage
     -Length
     -PassThru
     -Start
-Get-FogUserGroupId -> IValueList
+Get-FgUserGroupId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogUserGroupMember -> IUserGroupMember, IUserGroupMemberPage
+Get-FgUserGroupMember -> FogSdk.Models.IUserGroupMember, FogSdk.Models.IUserGroupMemberPage
     -Expand
     -Filter
     -Id*
@@ -978,22 +978,22 @@ Get-FogUserGroupMember -> IUserGroupMember, IUserGroupMemberPage
     -Length
     -PassThru
     -Start
-Get-FogUserGroupMemberId -> IValueList
+Get-FgUserGroupMemberId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogUserGroupMemberName -> IValueList
+Get-FgUserGroupMemberName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogUserGroupName -> IValueList
+Get-FgUserGroupName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogUserId -> IValueList
+Get-FgUserId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogUserName -> IValueList
+Get-FgUserName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogUserTracking -> IUserTracking, IUserTrackingPage
+Get-FgUserTracking -> FogSdk.Models.IUserTracking, FogSdk.Models.IUserTrackingPage
     -Expand
     -Filter
     -Id*
@@ -1001,24 +1001,24 @@ Get-FogUserTracking -> IUserTracking, IUserTrackingPage
     -Length
     -PassThru
     -Start
-Get-FogUserTrackingId -> IValueList
+Get-FgUserTrackingId -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Get-FogUserTrackingName -> IValueList
+Get-FgUserTrackingName -> FogSdk.Models.IValueList
     -Filter
     -PassThru
-Install-FogPlugin -> IError
+Install-FgPlugin -> FogSdk.Models.IError
     -Id*
     -InputObject*
     -PassThru
-Join-FogArchitecture -> IError
+Join-FgArchitecture -> FogSdk.Models.IError
     -Access
     -Body*
     -Description
     -Ids*
     -Name*
     -PassThru
-Join-FogFileDeleteQueue -> IError
+Join-FgFileDeleteQueue -> FogSdk.Models.IError
     -Body*
     -CompletedTime
     -Ids*
@@ -1027,7 +1027,7 @@ Join-FogFileDeleteQueue -> IError
     -Pathtype*
     -StateId
     -StoragegroupId*
-Join-FogGroup -> IError
+Join-FgGroup -> FogSdk.Models.IError
     -Body*
     -Building
     -Description
@@ -1038,22 +1038,22 @@ Join-FogGroup -> IError
     -KernelDevice
     -Name*
     -PassThru
-Join-FogGroupAssociation -> IError
+Join-FgGroupAssociation -> FogSdk.Models.IError
     -Body*
     -GroupId*
     -HostId*
     -Ids*
     -PassThru
-Join-FogGroupByName -> IError
+Join-FgGroupByName -> FogSdk.Models.IError
     -Body*
     -Names*
     -PassThru
-Join-FogHookEvent -> IError
+Join-FgHookEvent -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name*
     -PassThru
-Join-FogHost -> IError
+Join-FgHost -> FogSdk.Models.IError
     -AdDomain
     -Adou
     -AdPass
@@ -1085,13 +1085,13 @@ Join-FogHost -> IError
     -ProductKey
     -Tokenlock
     -UseAd
-Join-FogHostAutoLogout -> IError
+Join-FgHostAutoLogout -> FogSdk.Models.IError
     -Body*
     -HostId*
     -Ids*
     -PassThru
     -Time*
-Join-FogHostScreenSetting -> IError
+Join-FgHostScreenSetting -> FogSdk.Models.IError
     -Body*
     -Height
     -HostId*
@@ -1102,7 +1102,7 @@ Join-FogHostScreenSetting -> IError
     -PassThru
     -Refresh
     -Width
-Join-FogImage -> IError
+Join-FgImage -> FogSdk.Models.IError
     -ArchId
     -Body*
     -Building
@@ -1124,26 +1124,26 @@ Join-FogImage -> IError
     -Size
     -Srvsize
     -ToReplicate
-Join-FogImageAssociation -> IError
+Join-FgImageAssociation -> FogSdk.Models.IError
     -Body*
     -Ids*
     -ImageId*
     -PassThru
     -Primary
     -StoragegroupId*
-Join-FogImagePartitionType -> IError
+Join-FgImagePartitionType -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name*
     -PassThru
     -Type*
-Join-FogImageType -> IError
+Join-FgImageType -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name*
     -PassThru
     -Type*
-Join-FogInventory -> IError
+Join-FgInventory -> FogSdk.Models.IError
     -Biosdate
     -Biosvendor
     -Biosversion
@@ -1180,7 +1180,7 @@ Join-FogInventory -> IError
     -Systype
     -Sysuuid
     -Sysversion
-Join-FogIpxe -> IError
+Join-FgIpxe -> FogSdk.Models.IError
     -Body*
     -Failure
     -File
@@ -1191,13 +1191,13 @@ Join-FogIpxe -> IError
     -Product
     -Success
     -Version
-Join-FogKeySequence -> IError
+Join-FgKeySequence -> FogSdk.Models.IError
     -Ascii*
     -Body*
     -Ids*
     -Name*
     -PassThru
-Join-FogMacAddressAssociation -> IError
+Join-FgMacAddressAssociation -> FogSdk.Models.IError
     -Body*
     -ClientIgnore
     -Description
@@ -1208,7 +1208,7 @@ Join-FogMacAddressAssociation -> IError
     -PassThru
     -Pending
     -Primary
-Join-FogModule -> IError
+Join-FgModule -> FogSdk.Models.IError
     -Body*
     -Description
     -Ids*
@@ -1216,14 +1216,14 @@ Join-FogModule -> IError
     -Name*
     -PassThru
     -ShortName*
-Join-FogModuleAssociation -> IError
+Join-FgModuleAssociation -> FogSdk.Models.IError
     -Body*
     -HostId*
     -Ids*
     -ModuleId*
     -PassThru
     -State
-Join-FogMulticastSession -> IError
+Join-FgMulticastSession -> FogSdk.Models.IError
     -Anon5
     -Body*
     -Clients
@@ -1246,13 +1246,13 @@ Join-FogMulticastSession -> IError
     -Starttime
     -StateId
     -StoragegroupId
-Join-FogMulticastSessionAssociation -> IError
+Join-FgMulticastSessionAssociation -> FogSdk.Models.IError
     -Body*
     -Ids*
     -MSId*
     -PassThru
     -TaskId*
-Join-FogNodeFailure -> IError
+Join-FgNodeFailure -> FogSdk.Models.IError
     -Body*
     -FailureTime*
     -HostId*
@@ -1261,24 +1261,24 @@ Join-FogNodeFailure -> IError
     -StoragegroupId*
     -StoragenodeId*
     -TaskId*
-Join-FogNotifyEvent -> IError
+Join-FgNotifyEvent -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name*
     -PassThru
-Join-FogOS -> IError
+Join-FgOS -> FogSdk.Models.IError
     -Body*
     -Description
     -Ids*
     -Name*
     -PassThru
-Join-FogOui -> IError
+Join-FgOui -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name*
     -PassThru
     -Prefix*
-Join-FogPlugin -> IError
+Join-FgPlugin -> FogSdk.Models.IError
     -Body*
     -Description
     -Icon
@@ -1290,7 +1290,7 @@ Join-FogPlugin -> IError
     -Runfile
     -State
     -Version
-Join-FogPowerManagement -> IError
+Join-FgPowerManagement -> FogSdk.Models.IError
     -Action*
     -Body*
     -Dom
@@ -1302,7 +1302,7 @@ Join-FogPowerManagement -> IError
     -Month
     -OnDemand
     -PassThru
-Join-FogPrinter -> IError
+Join-FgPrinter -> FogSdk.Models.IError
     -Body*
     -Config
     -ConfigFile
@@ -1318,7 +1318,7 @@ Join-FogPrinter -> IError
     -PAnon5
     -PassThru
     -Port
-Join-FogPrinterAssociation -> IError
+Join-FgPrinterAssociation -> FogSdk.Models.IError
     -Anon1
     -Anon2
     -Anon3
@@ -1330,7 +1330,7 @@ Join-FogPrinterAssociation -> IError
     -IsDefault
     -PassThru
     -PrinterId*
-Join-FogPxeMenuOption -> IError
+Join-FgPxeMenuOption -> FogSdk.Models.IError
     -Args
     -Body*
     -Default
@@ -1342,33 +1342,33 @@ Join-FogPxeMenuOption -> IError
     -Params
     -PassThru
     -RegMenu
-Join-FogRole -> IError
+Join-FgRole -> FogSdk.Models.IError
     -Body*
     -Description
     -Ids*
     -Name*
     -PassThru
-Join-FogRolePermission -> IError
+Join-FgRolePermission -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name*
     -PassThru
     -RoleId*
-Join-FogRoleUserAssociation -> IError
+Join-FgRoleUserAssociation -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name
     -PassThru
     -RoleId*
     -UserId*
-Join-FogRoleUserGroupAssociation -> IError
+Join-FgRoleUserGroupAssociation -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name
     -PassThru
     -RoleId*
     -UsergroupId*
-Join-FogScheduledTask -> IError
+Join-FgScheduledTask -> FogSdk.Models.IError
     -Body*
     -DayOfMonth
     -DayOfWeek
@@ -1392,7 +1392,7 @@ Join-FogScheduledTask -> IError
     -Shutdown
     -TaskTypeId*
     -Type*
-Join-FogSetting -> IError
+Join-FgSetting -> FogSdk.Models.IError
     -Body*
     -Category
     -Description
@@ -1400,13 +1400,13 @@ Join-FogSetting -> IError
     -Name*
     -PassThru
     -Value
-Join-FogSite -> IError
+Join-FgSite -> FogSdk.Models.IError
     -Body*
     -Description
     -Ids*
     -Name*
     -PassThru
-Join-FogSnapin -> IError
+Join-FgSnapin -> FogSdk.Models.IError
     -Anon3
     -Args
     -Body*
@@ -1427,28 +1427,28 @@ Join-FogSnapin -> IError
     -Size
     -Timeout
     -ToReplicate
-Join-FogSnapinAssociation -> IError
+Join-FgSnapinAssociation -> FogSdk.Models.IError
     -Body*
     -HostId*
     -Ids*
     -PassThru
     -Sequence
     -SnapinId*
-Join-FogSnapinGroupAssociation -> IError
+Join-FgSnapinGroupAssociation -> FogSdk.Models.IError
     -Body*
     -Ids*
     -PassThru
     -Primary
     -SnapinId*
     -StoragegroupId*
-Join-FogSnapinJob -> IError
+Join-FgSnapinJob -> FogSdk.Models.IError
     -AbortOnFail
     -Body*
     -HostId*
     -Ids*
     -PassThru
     -StateId*
-Join-FogSnapinTask -> IError
+Join-FgSnapinTask -> FogSdk.Models.IError
     -Body*
     -Checkin
     -Complete
@@ -1460,14 +1460,14 @@ Join-FogSnapinTask -> IError
     -Sequence
     -SnapinId*
     -StateId
-Join-FogStorageGroup -> IError
+Join-FgStorageGroup -> FogSdk.Models.IError
     -Body*
     -Description
     -Ids*
     -Name*
     -PassThru
     -Trustedcidrs
-Join-FogStorageNode -> IError
+Join-FgStorageNode -> FogSdk.Models.IError
     -Bandwidth
     -Bitrate
     -Body*
@@ -1490,7 +1490,7 @@ Join-FogStorageNode -> IError
     -StoragegroupId
     -User*
     -Webroot
-Join-FogTask -> IError
+Join-FgTask -> FogSdk.Models.IError
     -Body*
     -Bypassbitlocker
     -CheckInTime
@@ -1512,7 +1512,7 @@ Join-FogTask -> IError
     -StoragenodeId
     -TypeId*
     -Wol
-Join-FogTaskState -> IError
+Join-FgTaskState -> FogSdk.Models.IError
     -Body*
     -Description
     -Icon
@@ -1520,7 +1520,7 @@ Join-FogTaskState -> IError
     -Name*
     -Order
     -PassThru
-Join-FogTaskType -> IError
+Join-FgTaskType -> FogSdk.Models.IError
     -Access
     -Body*
     -Description
@@ -1533,7 +1533,7 @@ Join-FogTaskType -> IError
     -Name*
     -PassThru
     -Type
-Join-FogUser -> IError
+Join-FgUser -> FogSdk.Models.IError
     -Api
     -Apionly
     -Authsource
@@ -1543,183 +1543,183 @@ Join-FogUser -> IError
     -Name*
     -PassThru
     -Type
-Join-FogUserGroup -> IError
+Join-FgUserGroup -> FogSdk.Models.IError
     -Body*
     -Description
     -Ids*
     -Name*
     -PassThru
-Join-FogUserGroupMember -> IError
+Join-FgUserGroupMember -> FogSdk.Models.IError
     -Body*
     -Ids*
     -Name
     -PassThru
     -UsergroupId*
     -UserId*
-Measure-FogArchitecture -> IPathsJx0M36ArchitectureCountGetResponses200ContentApplicationJsonSchema
+Measure-FgArchitecture -> FogSdk.Models.IPathsJx0M36ArchitectureCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogFileDeleteQueue -> IPathsVfp0B1FiledeletequeueCountGetResponses200ContentApplicationJsonSchema
+Measure-FgFileDeleteQueue -> FogSdk.Models.IPathsVfp0B1FiledeletequeueCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogGroup -> IPaths2TcgsnGroupCountGetResponses200ContentApplicationJsonSchema
+Measure-FgGroup -> FogSdk.Models.IPaths2TcgsnGroupCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogGroupAssociation -> IPaths9T0G8EGroupassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgGroupAssociation -> FogSdk.Models.IPaths9T0G8EGroupassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogHistory -> IPaths1WirunpHistoryCountGetResponses200ContentApplicationJsonSchema
+Measure-FgHistory -> FogSdk.Models.IPaths1WirunpHistoryCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogHookEvent -> IPaths70KelvHookeventCountGetResponses200ContentApplicationJsonSchema
+Measure-FgHookEvent -> FogSdk.Models.IPaths70KelvHookeventCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogHost -> IPaths2Z6J26HostCountGetResponses200ContentApplicationJsonSchema
+Measure-FgHost -> FogSdk.Models.IPaths2Z6J26HostCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogHostAutoLogout -> IPathsMfvgz1HostautologoutCountGetResponses200ContentApplicationJsonSchema
+Measure-FgHostAutoLogout -> FogSdk.Models.IPathsMfvgz1HostautologoutCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogHostScreenSetting -> IPaths5UvhuwHostscreensettingCountGetResponses200ContentApplicationJsonSchema
+Measure-FgHostScreenSetting -> FogSdk.Models.IPaths5UvhuwHostscreensettingCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogImage -> IPathsDmk84AImageCountGetResponses200ContentApplicationJsonSchema
+Measure-FgImage -> FogSdk.Models.IPathsDmk84AImageCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogImageAssociation -> IPaths1I5Qr60ImageassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgImageAssociation -> FogSdk.Models.IPaths1I5Qr60ImageassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogImagePartitionType -> IPathsZqfbosImagepartitiontypeCountGetResponses200ContentApplicationJsonSchema
+Measure-FgImagePartitionType -> FogSdk.Models.IPathsZqfbosImagepartitiontypeCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogImageType -> IPaths1YkxztxImagetypeCountGetResponses200ContentApplicationJsonSchema
+Measure-FgImageType -> FogSdk.Models.IPaths1YkxztxImagetypeCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogInventory -> IPaths1Az2AckInventoryCountGetResponses200ContentApplicationJsonSchema
+Measure-FgInventory -> FogSdk.Models.IPaths1Az2AckInventoryCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogIpxe -> IPathsCef9YuIpxeCountGetResponses200ContentApplicationJsonSchema
+Measure-FgIpxe -> FogSdk.Models.IPathsCef9YuIpxeCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogKeySequence -> IPaths1Octh3NKeysequenceCountGetResponses200ContentApplicationJsonSchema
+Measure-FgKeySequence -> FogSdk.Models.IPaths1Octh3NKeysequenceCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogMacAddressAssociation -> IPathsX5Tjh8MacaddressassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgMacAddressAssociation -> FogSdk.Models.IPathsX5Tjh8MacaddressassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogModule -> IPaths1S8O5XlModuleCountGetResponses200ContentApplicationJsonSchema
+Measure-FgModule -> FogSdk.Models.IPaths1S8O5XlModuleCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogModuleAssociation -> IPathsGq1KdhModuleassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgModuleAssociation -> FogSdk.Models.IPathsGq1KdhModuleassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogMulticastSession -> IPaths1Uh7OzjMulticastsessionCountGetResponses200ContentApplicationJsonSchema
+Measure-FgMulticastSession -> FogSdk.Models.IPaths1Uh7OzjMulticastsessionCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogMulticastSessionAssociation -> IPaths1Y5Ks29MulticastsessionassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgMulticastSessionAssociation -> FogSdk.Models.IPaths1Y5Ks29MulticastsessionassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogNodeFailure -> IPaths2Wzw3BNodefailureCountGetResponses200ContentApplicationJsonSchema
+Measure-FgNodeFailure -> FogSdk.Models.IPaths2Wzw3BNodefailureCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogNotifyEvent -> IPaths1Ah10K3NotifyeventCountGetResponses200ContentApplicationJsonSchema
+Measure-FgNotifyEvent -> FogSdk.Models.IPaths1Ah10K3NotifyeventCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogOS -> IPaths12H6WouOSCountGetResponses200ContentApplicationJsonSchema
+Measure-FgOS -> FogSdk.Models.IPaths12H6WouOSCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogOui -> IPaths1Be29N4OuiCountGetResponses200ContentApplicationJsonSchema
+Measure-FgOui -> FogSdk.Models.IPaths1Be29N4OuiCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogPlugin -> IPaths3UillxPluginCountGetResponses200ContentApplicationJsonSchema
+Measure-FgPlugin -> FogSdk.Models.IPaths3UillxPluginCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogPowerManagement -> IPathsI5Nz85PowermanagementCountGetResponses200ContentApplicationJsonSchema
+Measure-FgPowerManagement -> FogSdk.Models.IPathsI5Nz85PowermanagementCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogPrinter -> IPaths1UfdxdaPrinterCountGetResponses200ContentApplicationJsonSchema
+Measure-FgPrinter -> FogSdk.Models.IPaths1UfdxdaPrinterCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogPrinterAssociation -> IPaths2S0Wt9PrinterassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgPrinterAssociation -> FogSdk.Models.IPaths2S0Wt9PrinterassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogPxeMenuOption -> IPaths1Onbht4PxemenuoptionsCountGetResponses200ContentApplicationJsonSchema
+Measure-FgPxeMenuOption -> FogSdk.Models.IPaths1Onbht4PxemenuoptionsCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogRole -> IPathsIuvcdoRoleCountGetResponses200ContentApplicationJsonSchema
+Measure-FgRole -> FogSdk.Models.IPathsIuvcdoRoleCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogRolePermission -> IPathsU7OkouRolepermissionCountGetResponses200ContentApplicationJsonSchema
+Measure-FgRolePermission -> FogSdk.Models.IPathsU7OkouRolepermissionCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogRoleUserAssociation -> IPaths7Vo3KjRoleuserassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgRoleUserAssociation -> FogSdk.Models.IPaths7Vo3KjRoleuserassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogRoleUserGroupAssociation -> IPaths1I9B90XRoleusergroupassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgRoleUserGroupAssociation -> FogSdk.Models.IPaths1I9B90XRoleusergroupassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogScheduledTask -> IPaths1Jfrtt8ScheduledtaskCountGetResponses200ContentApplicationJsonSchema
+Measure-FgScheduledTask -> FogSdk.Models.IPaths1Jfrtt8ScheduledtaskCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogSetting -> IPaths17Qpy05SettingCountGetResponses200ContentApplicationJsonSchema
+Measure-FgSetting -> FogSdk.Models.IPaths17Qpy05SettingCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogSite -> IPaths1MswcnpSiteCountGetResponses200ContentApplicationJsonSchema
+Measure-FgSite -> FogSdk.Models.IPaths1MswcnpSiteCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogSnapin -> IPaths1Xxmsy5SnapinCountGetResponses200ContentApplicationJsonSchema
+Measure-FgSnapin -> FogSdk.Models.IPaths1Xxmsy5SnapinCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogSnapinAssociation -> IPaths1OvddhbSnapinassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgSnapinAssociation -> FogSdk.Models.IPaths1OvddhbSnapinassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogSnapinGroupAssociation -> IPaths1SxxpavSnapingroupassociationCountGetResponses200ContentApplicationJsonSchema
+Measure-FgSnapinGroupAssociation -> FogSdk.Models.IPaths1SxxpavSnapingroupassociationCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogSnapinJob -> IPathsFmql73SnapinjobCountGetResponses200ContentApplicationJsonSchema
+Measure-FgSnapinJob -> FogSdk.Models.IPathsFmql73SnapinjobCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogSnapinTask -> IPaths2UmpkzSnapintaskCountGetResponses200ContentApplicationJsonSchema
+Measure-FgSnapinTask -> FogSdk.Models.IPaths2UmpkzSnapintaskCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogStorageGroup -> IPaths1Fk17DgStoragegroupCountGetResponses200ContentApplicationJsonSchema
+Measure-FgStorageGroup -> FogSdk.Models.IPaths1Fk17DgStoragegroupCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogStorageNode -> IPaths96N76OStoragenodeCountGetResponses200ContentApplicationJsonSchema
+Measure-FgStorageNode -> FogSdk.Models.IPaths96N76OStoragenodeCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogTask -> IPathsWwrpalTaskCountGetResponses200ContentApplicationJsonSchema
+Measure-FgTask -> FogSdk.Models.IPathsWwrpalTaskCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogTaskLog -> IPathsThulztTasklogCountGetResponses200ContentApplicationJsonSchema
+Measure-FgTaskLog -> FogSdk.Models.IPathsThulztTasklogCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogTaskState -> IPaths83Jx8ATaskstateCountGetResponses200ContentApplicationJsonSchema
+Measure-FgTaskState -> FogSdk.Models.IPaths83Jx8ATaskstateCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogTaskType -> IPathsOpudmkTasktypeCountGetResponses200ContentApplicationJsonSchema
+Measure-FgTaskType -> FogSdk.Models.IPathsOpudmkTasktypeCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogUser -> IPaths1Ypd2BdUserCountGetResponses200ContentApplicationJsonSchema
+Measure-FgUser -> FogSdk.Models.IPaths1Ypd2BdUserCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogUserGroup -> IPathsHm266YUsergroupCountGetResponses200ContentApplicationJsonSchema
+Measure-FgUserGroup -> FogSdk.Models.IPathsHm266YUsergroupCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogUserGroupMember -> IPaths1Qk9SdmUsergroupmemberCountGetResponses200ContentApplicationJsonSchema
+Measure-FgUserGroupMember -> FogSdk.Models.IPaths1Qk9SdmUsergroupmemberCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-Measure-FogUserTracking -> IPaths1Osyg79UsertrackingCountGetResponses200ContentApplicationJsonSchema
+Measure-FgUserTracking -> FogSdk.Models.IPaths1Osyg79UsertrackingCountGetResponses200ContentApplicationJsonSchema
     -Filter
     -PassThru
-New-FogArchitecture -> IArchitecture
+New-FgArchitecture -> FogSdk.Models.IArchitecture
     -Access
     -AdditionalProperties
     -Body*
     -Description
     -Name*
     -PassThru
-New-FogFileDeleteQueue -> IFileDeleteQueue
+New-FgFileDeleteQueue -> FogSdk.Models.IFileDeleteQueue
     -AdditionalProperties
     -Body*
     -CompletedTime
@@ -1728,9 +1728,9 @@ New-FogFileDeleteQueue -> IFileDeleteQueue
     -Pathtype*
     -StateId
     -StoragegroupId*
-New-FogFileDeleteQueueTask -> IListEnvelope
+New-FgFileDeleteQueueTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -1741,7 +1741,7 @@ New-FogFileDeleteQueueTask -> IListEnvelope
     -TaskName
     -TaskTypeId
     -Wol
-New-FogGroup -> IGroup
+New-FgGroup -> FogSdk.Models.IGroup
     -AdditionalProperties
     -Body*
     -Building
@@ -1752,15 +1752,15 @@ New-FogGroup -> IGroup
     -KernelDevice
     -Name*
     -PassThru
-New-FogGroupAssociation -> IGroupAssociation
+New-FgGroupAssociation -> FogSdk.Models.IGroupAssociation
     -AdditionalProperties
     -Body*
     -GroupId*
     -HostId*
     -PassThru
-New-FogGroupTask -> IListEnvelope
+New-FgGroupTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -1771,12 +1771,12 @@ New-FogGroupTask -> IListEnvelope
     -TaskName
     -TaskTypeId
     -Wol
-New-FogHookEvent -> IHookEvent
+New-FgHookEvent -> FogSdk.Models.IHookEvent
     -AdditionalProperties
     -Body*
     -Name*
     -PassThru
-New-FogHost -> IHost
+New-FgHost -> FogSdk.Models.IHost
     -AdditionalProperties
     -AdDomain
     -Adou
@@ -1808,13 +1808,13 @@ New-FogHost -> IHost
     -ProductKey
     -Tokenlock
     -UseAd
-New-FogHostAutoLogout -> IHostAutoLogout
+New-FgHostAutoLogout -> FogSdk.Models.IHostAutoLogout
     -AdditionalProperties
     -Body*
     -HostId*
     -PassThru
     -Time*
-New-FogHostScreenSetting -> IHostScreenSetting
+New-FgHostScreenSetting -> FogSdk.Models.IHostScreenSetting
     -AdditionalProperties
     -Body*
     -Height
@@ -1825,9 +1825,9 @@ New-FogHostScreenSetting -> IHostScreenSetting
     -PassThru
     -Refresh
     -Width
-New-FogHostTask -> IListEnvelope
+New-FgHostTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -1838,7 +1838,7 @@ New-FogHostTask -> IListEnvelope
     -TaskName
     -TaskTypeId
     -Wol
-New-FogImage -> IImage
+New-FgImage -> FogSdk.Models.IImage
     -AdditionalProperties
     -ArchId
     -Body*
@@ -1860,26 +1860,26 @@ New-FogImage -> IImage
     -Size
     -Srvsize
     -ToReplicate
-New-FogImageAssociation -> IImageAssociation
+New-FgImageAssociation -> FogSdk.Models.IImageAssociation
     -AdditionalProperties
     -Body*
     -ImageId*
     -PassThru
     -Primary
     -StoragegroupId*
-New-FogImagePartitionType -> IImagePartitionType
+New-FgImagePartitionType -> FogSdk.Models.IImagePartitionType
     -AdditionalProperties
     -Body*
     -Name*
     -PassThru
     -Type*
-New-FogImageType -> IImageType
+New-FgImageType -> FogSdk.Models.IImageType
     -AdditionalProperties
     -Body*
     -Name*
     -PassThru
     -Type*
-New-FogInventory -> IInventory
+New-FgInventory -> FogSdk.Models.IInventory
     -AdditionalProperties
     -Biosdate
     -Biosvendor
@@ -1916,7 +1916,7 @@ New-FogInventory -> IInventory
     -Systype
     -Sysuuid
     -Sysversion
-New-FogIpxe -> IIpxe
+New-FgIpxe -> FogSdk.Models.IIpxe
     -AdditionalProperties
     -Body*
     -Failure
@@ -1927,13 +1927,13 @@ New-FogIpxe -> IIpxe
     -Product
     -Success
     -Version
-New-FogKeySequence -> IKeySequence
+New-FgKeySequence -> FogSdk.Models.IKeySequence
     -AdditionalProperties
     -Ascii*
     -Body*
     -Name*
     -PassThru
-New-FogMacAddressAssociation -> IMacAddressAssociation
+New-FgMacAddressAssociation -> FogSdk.Models.IMacAddressAssociation
     -AdditionalProperties
     -Body*
     -ClientIgnore
@@ -1944,7 +1944,7 @@ New-FogMacAddressAssociation -> IMacAddressAssociation
     -PassThru
     -Pending
     -Primary
-New-FogModule -> IModule
+New-FgModule -> FogSdk.Models.IModule
     -AdditionalProperties
     -Body*
     -Description
@@ -1952,14 +1952,14 @@ New-FogModule -> IModule
     -Name*
     -PassThru
     -ShortName*
-New-FogModuleAssociation -> IModuleAssociation
+New-FgModuleAssociation -> FogSdk.Models.IModuleAssociation
     -AdditionalProperties
     -Body*
     -HostId*
     -ModuleId*
     -PassThru
     -State
-New-FogMulticastSession -> IMulticastSession
+New-FgMulticastSession -> FogSdk.Models.IMulticastSession
     -AdditionalProperties
     -Anon5
     -Body*
@@ -1982,15 +1982,15 @@ New-FogMulticastSession -> IMulticastSession
     -Starttime
     -StateId
     -StoragegroupId
-New-FogMulticastSessionAssociation -> IMulticastSessionAssociation
+New-FgMulticastSessionAssociation -> FogSdk.Models.IMulticastSessionAssociation
     -AdditionalProperties
     -Body*
     -MSId*
     -PassThru
     -TaskId*
-New-FogMulticastSessionTask -> IListEnvelope
+New-FgMulticastSessionTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2001,7 +2001,7 @@ New-FogMulticastSessionTask -> IListEnvelope
     -TaskName
     -TaskTypeId
     -Wol
-New-FogNodeFailure -> INodeFailure
+New-FgNodeFailure -> FogSdk.Models.INodeFailure
     -AdditionalProperties
     -Body*
     -FailureTime*
@@ -2010,24 +2010,24 @@ New-FogNodeFailure -> INodeFailure
     -StoragegroupId*
     -StoragenodeId*
     -TaskId*
-New-FogNotifyEvent -> INotifyEvent
+New-FgNotifyEvent -> FogSdk.Models.INotifyEvent
     -AdditionalProperties
     -Body*
     -Name*
     -PassThru
-New-FogOS -> IOS
+New-FgOS -> FogSdk.Models.IOS
     -AdditionalProperties
     -Body*
     -Description
     -Name*
     -PassThru
-New-FogOui -> IOui
+New-FgOui -> FogSdk.Models.IOui
     -AdditionalProperties
     -Body*
     -Name*
     -PassThru
     -Prefix*
-New-FogPlugin -> IPlugin
+New-FgPlugin -> FogSdk.Models.IPlugin
     -AdditionalProperties
     -Body*
     -Description
@@ -2039,7 +2039,7 @@ New-FogPlugin -> IPlugin
     -Runfile
     -State
     -Version
-New-FogPowerManagement -> IPowerManagement
+New-FgPowerManagement -> FogSdk.Models.IPowerManagement
     -Action*
     -AdditionalProperties
     -Body*
@@ -2051,7 +2051,7 @@ New-FogPowerManagement -> IPowerManagement
     -Month
     -OnDemand
     -PassThru
-New-FogPrinter -> IPrinter
+New-FgPrinter -> FogSdk.Models.IPrinter
     -AdditionalProperties
     -Body*
     -Config
@@ -2067,7 +2067,7 @@ New-FogPrinter -> IPrinter
     -PAnon5
     -PassThru
     -Port
-New-FogPrinterAssociation -> IPrinterAssociation
+New-FgPrinterAssociation -> FogSdk.Models.IPrinterAssociation
     -AdditionalProperties
     -Anon1
     -Anon2
@@ -2079,7 +2079,7 @@ New-FogPrinterAssociation -> IPrinterAssociation
     -IsDefault
     -PassThru
     -PrinterId*
-New-FogPxeMenuOption -> IPxeMenuOptions
+New-FgPxeMenuOption -> FogSdk.Models.IPxeMenuOptions
     -AdditionalProperties
     -Args
     -Body*
@@ -2091,33 +2091,33 @@ New-FogPxeMenuOption -> IPxeMenuOptions
     -Params
     -PassThru
     -RegMenu
-New-FogRole -> IRole
+New-FgRole -> FogSdk.Models.IRole
     -AdditionalProperties
     -Body*
     -Description
     -Name*
     -PassThru
-New-FogRolePermission -> IRolePermission
+New-FgRolePermission -> FogSdk.Models.IRolePermission
     -AdditionalProperties
     -Body*
     -Name*
     -PassThru
     -RoleId*
-New-FogRoleUserAssociation -> IRoleUserAssociation
+New-FgRoleUserAssociation -> FogSdk.Models.IRoleUserAssociation
     -AdditionalProperties
     -Body*
     -Name
     -PassThru
     -RoleId*
     -UserId*
-New-FogRoleUserGroupAssociation -> IRoleUserGroupAssociation
+New-FgRoleUserGroupAssociation -> FogSdk.Models.IRoleUserGroupAssociation
     -AdditionalProperties
     -Body*
     -Name
     -PassThru
     -RoleId*
     -UsergroupId*
-New-FogScheduledTask -> IScheduledTask
+New-FgScheduledTask -> FogSdk.Models.IScheduledTask
     -AdditionalProperties
     -Body*
     -DayOfMonth
@@ -2141,9 +2141,9 @@ New-FogScheduledTask -> IScheduledTask
     -Shutdown
     -TaskTypeId*
     -Type*
-New-FogScheduledTaskTask -> IListEnvelope
+New-FgScheduledTaskTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2154,7 +2154,7 @@ New-FogScheduledTaskTask -> IListEnvelope
     -TaskName
     -TaskTypeId
     -Wol
-New-FogSetting -> ISetting
+New-FgSetting -> FogSdk.Models.ISetting
     -AdditionalProperties
     -Body*
     -Category
@@ -2162,13 +2162,13 @@ New-FogSetting -> ISetting
     -Name*
     -PassThru
     -Value
-New-FogSite -> ISite
+New-FgSite -> FogSdk.Models.ISite
     -AdditionalProperties
     -Body*
     -Description
     -Name*
     -PassThru
-New-FogSnapin -> ISnapin
+New-FgSnapin -> FogSdk.Models.ISnapin
     -AdditionalProperties
     -Anon3
     -Args
@@ -2189,30 +2189,30 @@ New-FogSnapin -> ISnapin
     -Size
     -Timeout
     -ToReplicate
-New-FogSnapinAssociation -> ISnapinAssociation
+New-FgSnapinAssociation -> FogSdk.Models.ISnapinAssociation
     -AdditionalProperties
     -Body*
     -HostId*
     -PassThru
     -Sequence
     -SnapinId*
-New-FogSnapinGroupAssociation -> ISnapinGroupAssociation
+New-FgSnapinGroupAssociation -> FogSdk.Models.ISnapinGroupAssociation
     -AdditionalProperties
     -Body*
     -PassThru
     -Primary
     -SnapinId*
     -StoragegroupId*
-New-FogSnapinJob -> ISnapinJob
+New-FgSnapinJob -> FogSdk.Models.ISnapinJob
     -AbortOnFail
     -AdditionalProperties
     -Body*
     -HostId*
     -PassThru
     -StateId*
-New-FogSnapinJobTask -> IListEnvelope
+New-FgSnapinJobTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2223,7 +2223,7 @@ New-FogSnapinJobTask -> IListEnvelope
     -TaskName
     -TaskTypeId
     -Wol
-New-FogSnapinTask -> ISnapinTask
+New-FgSnapinTask -> FogSdk.Models.ISnapinTask
     -AdditionalProperties
     -Body*
     -Checkin
@@ -2235,9 +2235,9 @@ New-FogSnapinTask -> ISnapinTask
     -Sequence
     -SnapinId*
     -StateId
-New-FogSnapinTaskTask -> IListEnvelope
+New-FgSnapinTaskTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2248,14 +2248,14 @@ New-FogSnapinTaskTask -> IListEnvelope
     -TaskName
     -TaskTypeId
     -Wol
-New-FogStorageGroup -> IStorageGroup
+New-FgStorageGroup -> FogSdk.Models.IStorageGroup
     -AdditionalProperties
     -Body*
     -Description
     -Name*
     -PassThru
     -Trustedcidrs
-New-FogStorageNode -> IStorageNode
+New-FgStorageNode -> FogSdk.Models.IStorageNode
     -AdditionalProperties
     -Bandwidth
     -Bitrate
@@ -2278,7 +2278,7 @@ New-FogStorageNode -> IStorageNode
     -StoragegroupId
     -User*
     -Webroot
-New-FogTask -> ITask
+New-FgTask -> FogSdk.Models.ITask
     -AdditionalProperties
     -Body*
     -Bypassbitlocker
@@ -2300,9 +2300,9 @@ New-FogTask -> ITask
     -StoragenodeId
     -TypeId*
     -Wol
-New-FogTaskQueue -> IListEnvelope
+New-FgTaskQueue -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2313,7 +2313,7 @@ New-FogTaskQueue -> IListEnvelope
     -TaskName
     -TaskTypeId
     -Wol
-New-FogTaskState -> ITaskState
+New-FgTaskState -> FogSdk.Models.ITaskState
     -AdditionalProperties
     -Body*
     -Description
@@ -2321,7 +2321,7 @@ New-FogTaskState -> ITaskState
     -Name*
     -Order
     -PassThru
-New-FogTaskType -> ITaskType1
+New-FgTaskType -> FogSdk.Models.ITaskType1
     -Access
     -AdditionalProperties
     -Body*
@@ -2334,7 +2334,7 @@ New-FogTaskType -> ITaskType1
     -Name*
     -PassThru
     -Type
-New-FogUser -> IUser
+New-FgUser -> FogSdk.Models.IUser
     -AdditionalProperties
     -Api
     -Apionly
@@ -2344,248 +2344,248 @@ New-FogUser -> IUser
     -Name*
     -PassThru
     -Type
-New-FogUserGroup -> IUserGroup
+New-FgUserGroup -> FogSdk.Models.IUserGroup
     -AdditionalProperties
     -Body*
     -Description
     -Name*
     -PassThru
-New-FogUserGroupMember -> IUserGroupMember
+New-FgUserGroupMember -> FogSdk.Models.IUserGroupMember
     -AdditionalProperties
     -Body*
     -Name
     -PassThru
     -UsergroupId*
     -UserId*
-Remove-FogArchitecture -> IPathsXuvjkjArchitectureIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgArchitecture -> FogSdk.Models.IPathsXuvjkjArchitectureIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogFileDeleteQueue -> IPathsX452GoFiledeletequeueIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgFileDeleteQueue -> FogSdk.Models.IPathsX452GoFiledeletequeueIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogGroup -> IPaths1MilotkGroupIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgGroup -> FogSdk.Models.IPaths1MilotkGroupIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogGroupAssociation -> IPaths1Lzw7EzGroupassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgGroupAssociation -> FogSdk.Models.IPaths1Lzw7EzGroupassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogHookEvent -> IPaths124XacvHookeventIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgHookEvent -> FogSdk.Models.IPaths124XacvHookeventIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogHost -> IPathsIu18VkHostIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgHost -> FogSdk.Models.IPathsIu18VkHostIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogHostAutoLogout -> IPaths1Ujq70LHostautologoutIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgHostAutoLogout -> FogSdk.Models.IPaths1Ujq70LHostautologoutIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogHostScreenSetting -> IPaths1FoicnmHostscreensettingIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgHostScreenSetting -> FogSdk.Models.IPaths1FoicnmHostscreensettingIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogImage -> IPaths1R11NjoImageIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgImage -> FogSdk.Models.IPaths1R11NjoImageIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogImageAssociation -> IPathsSb6E19ImageassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgImageAssociation -> FogSdk.Models.IPathsSb6E19ImageassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogImagePartitionType -> IPaths1Bkcni4ImagepartitiontypeIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgImagePartitionType -> FogSdk.Models.IPaths1Bkcni4ImagepartitiontypeIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogImageType -> IPathsDa55M6ImagetypeIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgImageType -> FogSdk.Models.IPathsDa55M6ImagetypeIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogInventory -> IPathsW29382InventoryIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgInventory -> FogSdk.Models.IPathsW29382InventoryIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogIpxe -> IPathsBq2BxeIpxeIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgIpxe -> FogSdk.Models.IPathsBq2BxeIpxeIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogKeySequence -> IPaths1Eu4V8IKeysequenceIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgKeySequence -> FogSdk.Models.IPaths1Eu4V8IKeysequenceIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogMacAddressAssociation -> IPathsEicsr9MacaddressassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgMacAddressAssociation -> FogSdk.Models.IPathsEicsr9MacaddressassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogModule -> IPaths1932N7NModuleIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgModule -> FogSdk.Models.IPaths1932N7NModuleIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogModuleAssociation -> IPaths1DzttmwModuleassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgModuleAssociation -> FogSdk.Models.IPaths1DzttmwModuleassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogMulticastSession -> IPaths1Uiezi2MulticastsessionIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgMulticastSession -> FogSdk.Models.IPaths1Uiezi2MulticastsessionIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogMulticastSessionAssociation -> IPaths41N1G0MulticastsessionassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgMulticastSessionAssociation -> FogSdk.Models.IPaths41N1G0MulticastsessionassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogNodeFailure -> IPaths145X76RNodefailureIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgNodeFailure -> FogSdk.Models.IPaths145X76RNodefailureIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogNotifyEvent -> IPathsA0T681NotifyeventIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgNotifyEvent -> FogSdk.Models.IPathsA0T681NotifyeventIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogOS -> IPathsSv05HkOSIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgOS -> FogSdk.Models.IPathsSv05HkOSIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogOui -> IPaths1AbydlgOuiIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgOui -> FogSdk.Models.IPaths1AbydlgOuiIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogPlugin -> IPaths196Flc2PluginIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgPlugin -> FogSdk.Models.IPaths196Flc2PluginIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogPowerManagement -> IPathsTgvl7APowermanagementIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgPowerManagement -> FogSdk.Models.IPathsTgvl7APowermanagementIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogPrinter -> IPathsId1M2FPrinterIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgPrinter -> FogSdk.Models.IPathsId1M2FPrinterIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogPrinterAssociation -> IPaths15Mfc20PrinterassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgPrinterAssociation -> FogSdk.Models.IPaths15Mfc20PrinterassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogPxeMenuOption -> IPathsFa5H59PxemenuoptionsIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgPxeMenuOption -> FogSdk.Models.IPathsFa5H59PxemenuoptionsIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogRole -> IPaths1Jkf5CkRoleIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgRole -> FogSdk.Models.IPaths1Jkf5CkRoleIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogRolePermission -> IPaths1Hq5TbaRolepermissionIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgRolePermission -> FogSdk.Models.IPaths1Hq5TbaRolepermissionIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogRoleUserAssociation -> IPaths1Odg95WRoleuserassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgRoleUserAssociation -> FogSdk.Models.IPaths1Odg95WRoleuserassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogRoleUserGroupAssociation -> IPaths16EohxhRoleusergroupassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgRoleUserGroupAssociation -> FogSdk.Models.IPaths16EohxhRoleusergroupassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogScheduledTask -> IPathsO3T79MScheduledtaskIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgScheduledTask -> FogSdk.Models.IPathsO3T79MScheduledtaskIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogSetting -> IPaths1M0Mm8RSettingIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgSetting -> FogSdk.Models.IPaths1M0Mm8RSettingIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogSite -> IPathsZb70V7SiteIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgSite -> FogSdk.Models.IPathsZb70V7SiteIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogSnapin -> IPaths1Jveq72SnapinIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgSnapin -> FogSdk.Models.IPaths1Jveq72SnapinIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogSnapinAssociation -> IPaths4DevjgSnapinassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgSnapinAssociation -> FogSdk.Models.IPaths4DevjgSnapinassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogSnapinGroupAssociation -> IPaths1Omhts1SnapingroupassociationIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgSnapinGroupAssociation -> FogSdk.Models.IPaths1Omhts1SnapingroupassociationIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogSnapinJob -> IPaths8Ui560SnapinjobIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgSnapinJob -> FogSdk.Models.IPaths8Ui560SnapinjobIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogSnapinTask -> IPaths1Si2M7WSnapintaskIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgSnapinTask -> FogSdk.Models.IPaths1Si2M7WSnapintaskIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogStorageGroup -> IPaths4Z10EaStoragegroupIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgStorageGroup -> FogSdk.Models.IPaths4Z10EaStoragegroupIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogStorageNode -> IPaths1Ri0G6LStoragenodeIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgStorageNode -> FogSdk.Models.IPaths1Ri0G6LStoragenodeIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogTask -> IPathsBqzxufTaskIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgTask -> FogSdk.Models.IPathsBqzxufTaskIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogTaskState -> IPaths6Q6XygTaskstateIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgTaskState -> FogSdk.Models.IPaths6Q6XygTaskstateIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogTaskType -> IPathsHbyt3RTasktypeIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgTaskType -> FogSdk.Models.IPathsHbyt3RTasktypeIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogUser -> IPaths10Nxb6RUserIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgUser -> FogSdk.Models.IPaths10Nxb6RUserIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogUserGroup -> IPaths7NfoesUsergroupIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgUserGroup -> FogSdk.Models.IPaths7NfoesUsergroupIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Remove-FogUserGroupMember -> IPathsOkzzq6UsergroupmemberIdDeleteResponses200ContentApplicationJsonSchema
+Remove-FgUserGroupMember -> FogSdk.Models.IPathsOkzzq6UsergroupmemberIdDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Stop-FogFileDeleteQueueTask -> IPathsOk0JruFiledeletequeueIdCancelDeleteResponses200ContentApplicationJsonSchema
+Stop-FgFileDeleteQueueTask -> FogSdk.Models.IPathsOk0JruFiledeletequeueIdCancelDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Stop-FogGroupTask -> IPaths3Iemm0GroupIdCancelDeleteResponses200ContentApplicationJsonSchema
+Stop-FgGroupTask -> FogSdk.Models.IPaths3Iemm0GroupIdCancelDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Stop-FogHostTask -> IPaths1H6Hra6HostIdCancelDeleteResponses200ContentApplicationJsonSchema
+Stop-FgHostTask -> FogSdk.Models.IPaths1H6Hra6HostIdCancelDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Stop-FogMulticastSessionTask -> IPathsBufxo2MulticastsessionIdCancelDeleteResponses200ContentApplicationJsonSchema
+Stop-FgMulticastSessionTask -> FogSdk.Models.IPathsBufxo2MulticastsessionIdCancelDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Stop-FogScheduledTaskTask -> IPaths1R9PcyfScheduledtaskIdCancelDeleteResponses200ContentApplicationJsonSchema
+Stop-FgScheduledTaskTask -> FogSdk.Models.IPaths1R9PcyfScheduledtaskIdCancelDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Stop-FogSnapinJobTask -> IPaths1398IzySnapinjobIdCancelDeleteResponses200ContentApplicationJsonSchema
+Stop-FgSnapinJobTask -> FogSdk.Models.IPaths1398IzySnapinjobIdCancelDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Stop-FogSnapinTaskTask -> IPaths10Q6732SnapintaskIdCancelDeleteResponses200ContentApplicationJsonSchema
+Stop-FgSnapinTaskTask -> FogSdk.Models.IPaths10Q6732SnapintaskIdCancelDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Stop-FogTask -> IPaths103Shm5TaskIdCancelDeleteResponses200ContentApplicationJsonSchema
+Stop-FgTask -> FogSdk.Models.IPaths103Shm5TaskIdCancelDeleteResponses200ContentApplicationJsonSchema
     -Id*
     -InputObject*
     -PassThru
-Update-FogArchitecture -> IArchitecture
+Update-FgArchitecture -> FogSdk.Models.IArchitecture
     -Access
     -AdditionalProperties
     -Body*
@@ -2594,7 +2594,7 @@ Update-FogArchitecture -> IArchitecture
     -InputObject*
     -Name*
     -PassThru
-Update-FogFileDeleteQueue -> IFileDeleteQueue
+Update-FgFileDeleteQueue -> FogSdk.Models.IFileDeleteQueue
     -AdditionalProperties
     -Body*
     -CompletedTime
@@ -2605,7 +2605,7 @@ Update-FogFileDeleteQueue -> IFileDeleteQueue
     -Pathtype*
     -StateId
     -StoragegroupId*
-Update-FogGroup -> IGroup
+Update-FgGroup -> FogSdk.Models.IGroup
     -AdditionalProperties
     -Body*
     -Building
@@ -2618,7 +2618,7 @@ Update-FogGroup -> IGroup
     -KernelDevice
     -Name*
     -PassThru
-Update-FogGroupAssociation -> IGroupAssociation
+Update-FgGroupAssociation -> FogSdk.Models.IGroupAssociation
     -AdditionalProperties
     -Body*
     -GroupId*
@@ -2626,14 +2626,14 @@ Update-FogGroupAssociation -> IGroupAssociation
     -Id*
     -InputObject*
     -PassThru
-Update-FogHookEvent -> IHookEvent
+Update-FgHookEvent -> FogSdk.Models.IHookEvent
     -AdditionalProperties
     -Body*
     -Id*
     -InputObject*
     -Name*
     -PassThru
-Update-FogHost -> IHost
+Update-FgHost -> FogSdk.Models.IHost
     -AdditionalProperties
     -AdDomain
     -Adou
@@ -2667,7 +2667,7 @@ Update-FogHost -> IHost
     -ProductKey
     -Tokenlock
     -UseAd
-Update-FogHostAutoLogout -> IHostAutoLogout
+Update-FgHostAutoLogout -> FogSdk.Models.IHostAutoLogout
     -AdditionalProperties
     -Body*
     -HostId*
@@ -2675,7 +2675,7 @@ Update-FogHostAutoLogout -> IHostAutoLogout
     -InputObject*
     -PassThru
     -Time*
-Update-FogHostScreenSetting -> IHostScreenSetting
+Update-FgHostScreenSetting -> FogSdk.Models.IHostScreenSetting
     -AdditionalProperties
     -Body*
     -Height
@@ -2688,7 +2688,7 @@ Update-FogHostScreenSetting -> IHostScreenSetting
     -PassThru
     -Refresh
     -Width
-Update-FogImage -> IImage
+Update-FgImage -> FogSdk.Models.IImage
     -AdditionalProperties
     -ArchId
     -Body*
@@ -2712,7 +2712,7 @@ Update-FogImage -> IImage
     -Size
     -Srvsize
     -ToReplicate
-Update-FogImageAssociation -> IImageAssociation
+Update-FgImageAssociation -> FogSdk.Models.IImageAssociation
     -AdditionalProperties
     -Body*
     -Id*
@@ -2721,7 +2721,7 @@ Update-FogImageAssociation -> IImageAssociation
     -PassThru
     -Primary
     -StoragegroupId*
-Update-FogImagePartitionType -> IImagePartitionType
+Update-FgImagePartitionType -> FogSdk.Models.IImagePartitionType
     -AdditionalProperties
     -Body*
     -Id*
@@ -2729,7 +2729,7 @@ Update-FogImagePartitionType -> IImagePartitionType
     -Name*
     -PassThru
     -Type*
-Update-FogImageType -> IImageType
+Update-FgImageType -> FogSdk.Models.IImageType
     -AdditionalProperties
     -Body*
     -Id*
@@ -2737,7 +2737,7 @@ Update-FogImageType -> IImageType
     -Name*
     -PassThru
     -Type*
-Update-FogInventory -> IInventory
+Update-FgInventory -> FogSdk.Models.IInventory
     -AdditionalProperties
     -Biosdate
     -Biosvendor
@@ -2776,7 +2776,7 @@ Update-FogInventory -> IInventory
     -Systype
     -Sysuuid
     -Sysversion
-Update-FogIpxe -> IIpxe
+Update-FgIpxe -> FogSdk.Models.IIpxe
     -AdditionalProperties
     -Body*
     -Failure
@@ -2789,7 +2789,7 @@ Update-FogIpxe -> IIpxe
     -Product
     -Success
     -Version
-Update-FogKeySequence -> IKeySequence
+Update-FgKeySequence -> FogSdk.Models.IKeySequence
     -AdditionalProperties
     -Ascii*
     -Body*
@@ -2797,7 +2797,7 @@ Update-FogKeySequence -> IKeySequence
     -InputObject*
     -Name*
     -PassThru
-Update-FogMacAddressAssociation -> IMacAddressAssociation
+Update-FgMacAddressAssociation -> FogSdk.Models.IMacAddressAssociation
     -AdditionalProperties
     -Body*
     -ClientIgnore
@@ -2810,7 +2810,7 @@ Update-FogMacAddressAssociation -> IMacAddressAssociation
     -PassThru
     -Pending
     -Primary
-Update-FogModule -> IModule
+Update-FgModule -> FogSdk.Models.IModule
     -AdditionalProperties
     -Body*
     -Description
@@ -2820,7 +2820,7 @@ Update-FogModule -> IModule
     -Name*
     -PassThru
     -ShortName*
-Update-FogModuleAssociation -> IModuleAssociation
+Update-FgModuleAssociation -> FogSdk.Models.IModuleAssociation
     -AdditionalProperties
     -Body*
     -HostId*
@@ -2829,7 +2829,7 @@ Update-FogModuleAssociation -> IModuleAssociation
     -ModuleId*
     -PassThru
     -State
-Update-FogMulticastSession -> IMulticastSession
+Update-FgMulticastSession -> FogSdk.Models.IMulticastSession
     -AdditionalProperties
     -Anon5
     -Body*
@@ -2854,7 +2854,7 @@ Update-FogMulticastSession -> IMulticastSession
     -Starttime
     -StateId
     -StoragegroupId
-Update-FogMulticastSessionAssociation -> IMulticastSessionAssociation
+Update-FgMulticastSessionAssociation -> FogSdk.Models.IMulticastSessionAssociation
     -AdditionalProperties
     -Body*
     -Id*
@@ -2862,7 +2862,7 @@ Update-FogMulticastSessionAssociation -> IMulticastSessionAssociation
     -MSId*
     -PassThru
     -TaskId*
-Update-FogNodeFailure -> INodeFailure
+Update-FgNodeFailure -> FogSdk.Models.INodeFailure
     -AdditionalProperties
     -Body*
     -FailureTime*
@@ -2873,14 +2873,14 @@ Update-FogNodeFailure -> INodeFailure
     -StoragegroupId*
     -StoragenodeId*
     -TaskId*
-Update-FogNotifyEvent -> INotifyEvent
+Update-FgNotifyEvent -> FogSdk.Models.INotifyEvent
     -AdditionalProperties
     -Body*
     -Id*
     -InputObject*
     -Name*
     -PassThru
-Update-FogOS -> IOS
+Update-FgOS -> FogSdk.Models.IOS
     -AdditionalProperties
     -Body*
     -Description
@@ -2888,7 +2888,7 @@ Update-FogOS -> IOS
     -InputObject*
     -Name*
     -PassThru
-Update-FogOui -> IOui
+Update-FgOui -> FogSdk.Models.IOui
     -AdditionalProperties
     -Body*
     -Id*
@@ -2896,7 +2896,7 @@ Update-FogOui -> IOui
     -Name*
     -PassThru
     -Prefix*
-Update-FogPlugin -> IPlugin
+Update-FgPlugin -> FogSdk.Models.IPlugin
     -AdditionalProperties
     -Body*
     -Description
@@ -2910,7 +2910,7 @@ Update-FogPlugin -> IPlugin
     -Runfile
     -State
     -Version
-Update-FogPowerManagement -> IPowerManagement
+Update-FgPowerManagement -> FogSdk.Models.IPowerManagement
     -Action*
     -AdditionalProperties
     -Body*
@@ -2924,7 +2924,7 @@ Update-FogPowerManagement -> IPowerManagement
     -Month
     -OnDemand
     -PassThru
-Update-FogPrinter -> IPrinter
+Update-FgPrinter -> FogSdk.Models.IPrinter
     -AdditionalProperties
     -Body*
     -Config
@@ -2942,7 +2942,7 @@ Update-FogPrinter -> IPrinter
     -PAnon5
     -PassThru
     -Port
-Update-FogPrinterAssociation -> IPrinterAssociation
+Update-FgPrinterAssociation -> FogSdk.Models.IPrinterAssociation
     -AdditionalProperties
     -Anon1
     -Anon2
@@ -2956,7 +2956,7 @@ Update-FogPrinterAssociation -> IPrinterAssociation
     -IsDefault
     -PassThru
     -PrinterId*
-Update-FogPxeMenuOption -> IPxeMenuOptions
+Update-FgPxeMenuOption -> FogSdk.Models.IPxeMenuOptions
     -AdditionalProperties
     -Args
     -Body*
@@ -2970,7 +2970,7 @@ Update-FogPxeMenuOption -> IPxeMenuOptions
     -Params
     -PassThru
     -RegMenu
-Update-FogRole -> IRole
+Update-FgRole -> FogSdk.Models.IRole
     -AdditionalProperties
     -Body*
     -Description
@@ -2978,7 +2978,7 @@ Update-FogRole -> IRole
     -InputObject*
     -Name*
     -PassThru
-Update-FogRolePermission -> IRolePermission
+Update-FgRolePermission -> FogSdk.Models.IRolePermission
     -AdditionalProperties
     -Body*
     -Id*
@@ -2986,7 +2986,7 @@ Update-FogRolePermission -> IRolePermission
     -Name*
     -PassThru
     -RoleId*
-Update-FogRoleUserAssociation -> IRoleUserAssociation
+Update-FgRoleUserAssociation -> FogSdk.Models.IRoleUserAssociation
     -AdditionalProperties
     -Body*
     -Id*
@@ -2995,7 +2995,7 @@ Update-FogRoleUserAssociation -> IRoleUserAssociation
     -PassThru
     -RoleId*
     -UserId*
-Update-FogRoleUserGroupAssociation -> IRoleUserGroupAssociation
+Update-FgRoleUserGroupAssociation -> FogSdk.Models.IRoleUserGroupAssociation
     -AdditionalProperties
     -Body*
     -Id*
@@ -3004,7 +3004,7 @@ Update-FogRoleUserGroupAssociation -> IRoleUserGroupAssociation
     -PassThru
     -RoleId*
     -UsergroupId*
-Update-FogScheduledTask -> IScheduledTask
+Update-FgScheduledTask -> FogSdk.Models.IScheduledTask
     -AdditionalProperties
     -Body*
     -DayOfMonth
@@ -3030,7 +3030,7 @@ Update-FogScheduledTask -> IScheduledTask
     -Shutdown
     -TaskTypeId*
     -Type*
-Update-FogSetting -> ISetting
+Update-FgSetting -> FogSdk.Models.ISetting
     -AdditionalProperties
     -Body*
     -Category
@@ -3040,9 +3040,9 @@ Update-FogSetting -> ISetting
     -Name*
     -PassThru
     -Value
-Update-FogSettingsCache -> IPathsS56Mm4SettingsCacheRefreshPostResponses200ContentApplicationJsonSchema
+Update-FgSettingsCache -> FogSdk.Models.IPathsS56Mm4SettingsCacheRefreshPostResponses200ContentApplicationJsonSchema
     -PassThru
-Update-FogSite -> ISite
+Update-FgSite -> FogSdk.Models.ISite
     -AdditionalProperties
     -Body*
     -Description
@@ -3050,7 +3050,7 @@ Update-FogSite -> ISite
     -InputObject*
     -Name*
     -PassThru
-Update-FogSnapin -> ISnapin
+Update-FgSnapin -> FogSdk.Models.ISnapin
     -AdditionalProperties
     -Anon3
     -Args
@@ -3073,7 +3073,7 @@ Update-FogSnapin -> ISnapin
     -Size
     -Timeout
     -ToReplicate
-Update-FogSnapinAssociation -> ISnapinAssociation
+Update-FgSnapinAssociation -> FogSdk.Models.ISnapinAssociation
     -AdditionalProperties
     -Body*
     -HostId*
@@ -3082,7 +3082,7 @@ Update-FogSnapinAssociation -> ISnapinAssociation
     -PassThru
     -Sequence
     -SnapinId*
-Update-FogSnapinGroupAssociation -> ISnapinGroupAssociation
+Update-FgSnapinGroupAssociation -> FogSdk.Models.ISnapinGroupAssociation
     -AdditionalProperties
     -Body*
     -Id*
@@ -3091,7 +3091,7 @@ Update-FogSnapinGroupAssociation -> ISnapinGroupAssociation
     -Primary
     -SnapinId*
     -StoragegroupId*
-Update-FogSnapinJob -> ISnapinJob
+Update-FgSnapinJob -> FogSdk.Models.ISnapinJob
     -AbortOnFail
     -AdditionalProperties
     -Body*
@@ -3100,7 +3100,7 @@ Update-FogSnapinJob -> ISnapinJob
     -InputObject*
     -PassThru
     -StateId*
-Update-FogSnapinTask -> ISnapinTask
+Update-FgSnapinTask -> FogSdk.Models.ISnapinTask
     -AdditionalProperties
     -Body*
     -Checkin
@@ -3114,7 +3114,7 @@ Update-FogSnapinTask -> ISnapinTask
     -Sequence
     -SnapinId*
     -StateId
-Update-FogStorageGroup -> IStorageGroup
+Update-FgStorageGroup -> FogSdk.Models.IStorageGroup
     -AdditionalProperties
     -Body*
     -Description
@@ -3123,7 +3123,7 @@ Update-FogStorageGroup -> IStorageGroup
     -Name*
     -PassThru
     -Trustedcidrs
-Update-FogStorageNode -> IStorageNode
+Update-FgStorageNode -> FogSdk.Models.IStorageNode
     -AdditionalProperties
     -Bandwidth
     -Bitrate
@@ -3148,7 +3148,7 @@ Update-FogStorageNode -> IStorageNode
     -StoragegroupId
     -User*
     -Webroot
-Update-FogTask -> ITask
+Update-FgTask -> FogSdk.Models.ITask
     -AdditionalProperties
     -Body*
     -Bypassbitlocker
@@ -3172,7 +3172,7 @@ Update-FogTask -> ITask
     -StoragenodeId
     -TypeId*
     -Wol
-Update-FogTaskState -> ITaskState
+Update-FgTaskState -> FogSdk.Models.ITaskState
     -AdditionalProperties
     -Body*
     -Description
@@ -3182,7 +3182,7 @@ Update-FogTaskState -> ITaskState
     -Name*
     -Order
     -PassThru
-Update-FogTaskType -> ITaskType1
+Update-FgTaskType -> FogSdk.Models.ITaskType1
     -Access
     -AdditionalProperties
     -Body*
@@ -3197,7 +3197,7 @@ Update-FogTaskType -> ITaskType1
     -Name*
     -PassThru
     -Type
-Update-FogUser -> IUser
+Update-FgUser -> FogSdk.Models.IUser
     -AdditionalProperties
     -Api
     -Apionly
@@ -3209,7 +3209,7 @@ Update-FogUser -> IUser
     -Name*
     -PassThru
     -Type
-Update-FogUserGroup -> IUserGroup
+Update-FgUserGroup -> FogSdk.Models.IUserGroup
     -AdditionalProperties
     -Body*
     -Description
@@ -3217,7 +3217,7 @@ Update-FogUserGroup -> IUserGroup
     -InputObject*
     -Name*
     -PassThru
-Update-FogUserGroupMember -> IUserGroupMember
+Update-FgUserGroupMember -> FogSdk.Models.IUserGroupMember
     -AdditionalProperties
     -Body*
     -Id*

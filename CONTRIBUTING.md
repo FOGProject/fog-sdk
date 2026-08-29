@@ -48,12 +48,19 @@ Changes touching the credential layer need to hold these, and there are tests
 asserting each:
 
 - No secret reaches the pipeline, a log, or `-Debug` output.
-- Bearer tokens go on the wire raw; the legacy `fog-api-token` and
-  `fog-user-token` headers stay base64. They are never sent together.
+- **Bearer only.** The SDK is generated from a 1.6 document and cannot describe
+  a 1.5 server, so it does not carry the legacy `fog-api-token` +
+  `fog-user-token` pair. Those headers still work against a FOG server and are
+  not deprecated — FogApi serves those users. Do not add a second credential
+  shape here without changing the Python contract to match.
+- Bearer goes on the wire **raw**, not base64. The legacy headers are base64
+  and bearer is not; a server-side test pins the distinction, because hex is
+  itself valid base64 and the two would otherwise be indistinguishable.
 - Windows Credential Manager writes use `CRED_PERSIST_LOCAL_MACHINE`, never
   `ENTERPRISE`.
 - Nothing prompts in a non-interactive session. A prompt there does not fail, it
   hangs until something kills it.
+- Every cmdlet the SDK exports is `Verb-Fg*`, hand-written ones included.
 
 ## Licensing
 

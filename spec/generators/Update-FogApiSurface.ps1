@@ -114,7 +114,7 @@ $lines = foreach ($name in $surface.Keys) {
 }
 
 $header = @(
-    '# FogApi public surface -- GENERATED, do not hand-edit.'
+    '# FogSdk public surface -- GENERATED, do not hand-edit.'
     '#'
     '# Regenerate with spec/generators/Update-FogApiSurface.ps1 whenever a'
     '# surface change is intended, in the same commit as the change. CI runs'

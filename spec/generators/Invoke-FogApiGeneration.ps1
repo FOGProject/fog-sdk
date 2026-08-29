@@ -256,11 +256,20 @@ $files = @(Get-ChildItem -LiteralPath $cmdletDir -Filter '*.cs' -ErrorAction Sil
 # build-module.ps1 collapses into a single exported proxy -- so a file count
 # roughly doubles the real surface and is not what a user sees.
 # Split on the configured prefix rather than on "leading run of lowercase".
-# GetFogHost_List -> Get + FogHost. A pattern like ^([A-Z][a-z]+)(.+?)_ looks
+# GetFgHost_List -> Get + FgHost. A pattern like ^([A-Z][a-z]+)(.+?)_ looks
 # right and is not: the lazy noun lets the verb group creep, and the names come
-# out as ExportFogSyste-m. The prefix is the one reliable boundary in the name,
-# and this script is what sets it.
-$prefix = 'Fog'
+# out as ExportFogSyste-m. The prefix is the one reliable boundary in the name.
+#
+# READ IT FROM THE README, do not repeat it here. This used to be a hardcoded
+# 'Fog' and it silently became wrong the moment the prefix changed to 'Fg' --
+# the guard below caught it, but only after a full 83-second generation. There
+# is one source of truth for the prefix and it is autorest-readme.md, because
+# that is the file AutoRest actually reads.
+if ((Get-Content -LiteralPath $readme -Raw) -match '(?m)^\s*prefix:\s*(?<p>[A-Za-z][A-Za-z0-9]*)\s*$') {
+    $prefix = $Matches.p
+} else {
+    throw "No 'prefix:' key found in $readme. The cmdlet-name parser needs it to split verb from noun."
+}
 $names = $files | ForEach-Object {
     # $_.BaseName, not $_ -- matching the FileInfo coerces it to a full path,
     # which never matches an anchored pattern, and the count is a silent 0.
@@ -279,13 +288,13 @@ if ($files.Count -gt 0 -and ($files.Count / [math]::Max($names.Count, 1)) -gt 4)
     Write-Warning "$($files.Count) source files for only $($names.Count) names -- was the document ingested twice?"
 }
 
-$unprefixed = @($names).Where{ $_ -notmatch '^[A-Za-z]+-Fog' }
+$unprefixed = @($names).Where{ $_ -cnotmatch "^[A-Za-z]+-$prefix[A-Z0-9]" }
 
 Write-Host ''
 Write-Host "inference warnings:      $inferred" -ForegroundColor Green
 Write-Host "generated source files:  $($files.Count)"
 Write-Host "distinct cmdlet names:   $($names.Count)"
-Write-Host "without a Fog prefix:    $($unprefixed.Count)" -ForegroundColor $(if ($unprefixed.Count) { 'Red' } else { 'Green' })
+Write-Host "without the $prefix prefix:  $($unprefixed.Count)" -ForegroundColor $(if ($unprefixed.Count) { 'Red' } else { 'Green' })
 if ($unprefixed.Count) { Write-Host "  $($unprefixed -join ', ')" -ForegroundColor Red }
 
 Write-Host ''
