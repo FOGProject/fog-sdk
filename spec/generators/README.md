@@ -161,17 +161,80 @@ Generating from a live document also picks up whatever plugins that server has
 installed — no plugin hooks fire in an offline dump. See "Confirmed against a
 live server" below.
 
-### It cannot authenticate yet
+### It cannot authenticate on its own — and how that is fixed
 
 `Module.cs` builds an `HttpPipeline` with no credential step, and FOG wants
-`fog-api-token` and `fog-user-token` on every request. The only injection
-point AutoRest offers is `-HttpPipelinePrepend`, which takes a C#
-`SendAsyncStep` delegate rather than a scriptblock.
+either a bearer token or the `fog-api-token` + `fog-user-token` pair on every
+request. AutoRest knows three security schemes, all Azure's, and does not
+support AND-ed requirements, so it will never emit one.
 
-So a freshly generated module **imports and can be inspected, but every call
-returns 401**. Wiring this up is the job of the hand-written
-`custom/Invoke-FogApi.cs` plus the settings bootstrap, which is not written
-yet. Do not expect to talk to a server with generated cmdlets alone.
+So a **freshly generated module imports and can be inspected, but every call
+returns 401.** Generated cmdlets alone cannot talk to a server.
+
+**The fix is `Module.AfterCreatePipeline`, not `-HttpPipelinePrepend`.**
+`Module.cs` declares three `partial void` hooks that a hand-written
+`partial class Module` in `custom/` implements:
+
+```csharp
+partial void BeforeCreatePipeline(InvocationInfo, ref Runtime.HttpPipeline);
+partial void AfterCreatePipeline(InvocationInfo, ref Runtime.HttpPipeline);
+partial void CustomInit();
+```
+
+`AfterCreatePipeline` receives the pipeline **by reference on every cmdlet
+invocation**, so a `SendAsyncStep` prepended there carries auth for the whole
+module without appearing in any cmdlet's parameters.
+
+This was chosen over `$PSDefaultParameterValues['*:HttpPipelinePrepend']`,
+which works but is session-global state a user can clear, leaks the mechanism
+into the public surface, and misses the exported cmdlets that have no pipeline
+parameter at all.
+
+#### Verified, not assumed
+
+Measured against a minimal probe document on the pinned generator
+(autorest core 3.10.9, `@autorest/powershell@4.0.758`). A `partial class Module`
+in `custom/` implementing `AfterCreatePipeline` compiled clean, and calling a
+generated cmdlet with **no `-HttpPipelinePrepend` argument** produced this at a
+local listener:
+
+```
+method : GET
+url    : http://127.0.0.1:18080/thing        <- host rewritten
+Authorization: Bearer fog_TESTTOKEN          <- injected by the step
+X-Probe-Marker: helper-compiled              <- helper class in custom/
+```
+
+Three things that establishes, each of which had been an assumption:
+
+1. The hook fires automatically on an ordinary cmdlet call.
+2. The step can rewrite the request host, which is what makes the base URL
+   compiled in at 989 call sites irrelevant. The package stays server-agnostic
+   and `-Live` generation is an inspection tool, never a release path.
+3. A plain, non-cmdlet helper class in `custom/` compiles into the private DLL
+   and is callable from the step. `custom/` C# does **not** have to follow the
+   `[cmdletName]_[variantName]` naming that the folder's README describes for
+   cmdlets.
+
+The exact `SendAsyncStep` signature, which is easy to get wrong — it is three
+arguments, not four:
+
+```csharp
+delegate Task<HttpResponseMessage> SendAsyncStep(
+    HttpRequestMessage request, IEventListener callback, ISendAsync next);
+```
+
+#### One config trap found while probing
+
+**`info.title` must not collapse to the same identifier as `namespace`.** A
+probe with title `Probe` and namespace `Probe` generated `class Probe` inside
+`namespace Probe`, after which every `Probe.Runtime.*` reference in the
+generated runtime resolved against the class and failed — 114 errors of
+`CS0426: The type name 'Runtime' does not exist in the type 'Probe'`, none of
+them in hand-written code.
+
+This repo is safe: title `FOG Project API` generates `FogProjectApi`, and the
+namespace is `FogSdk`. Worth knowing before renaming either.
 
 ### Known limits, and why they are handled where they are
 
