@@ -1,0 +1,126 @@
+{
+  "$comment": "Where spec/openapi/fog-1.6.json came from. Regenerate both together; a snapshot with a stale provenance record is worse than no snapshot, because the diff it produces cannot be traced back to a server change.",
+  "document": "fog-1.6.json",
+  "source": {
+    "repo": "https://github.com/FOGProject/fogproject",
+    "branch": "working-1.6",
+    "commit": "b3929237235f15042755779e28a20d54e69b0dcc",
+    "commitShort": "b39292372",
+    "commitDate": "2026-08-27T12:14:17-05:00",
+    "fogVersion": "1.6.0-beta.4219",
+    "openapiClassLastChanged": "b39292372",
+    "localCorrections": [],
+    "$note": "Dumped from origin/working-1.6 directly, after PR #1408 and #1409 both merged. No local corrections."
+  },
+  "generatedBy": "spec/tools/dump-openapi.php",
+  "command": "php spec/tools/dump-openapi.php --web <fogproject>/packages/web --version 1.6.0-beta.4219 --out spec/openapi/fog-1.6.json",
+  "servedLiveAt": [
+    "GET {webroot}/system/openapi",
+    "GET {webroot}/swagger.json"
+  ],
+  "counts": {
+    "paths": 380,
+    "operations": 528,
+    "schemas": 162,
+    "routeClasses": 51
+  },
+  "notes": [
+    "Both live routes sit in the router's unauthenticated allowlist, so discovery needs no tokens.",
+    "The live document is built per request and includes classes contributed by plugin hooks. This snapshot fires no hooks, so it describes stock FOG. That is the intended baseline for generated cmdlets; plugin classes are a runtime concern, handled by reading the live document.",
+    "1.6 only. The 1.5 line has no commons/schema-expected.php, so there is no type source to generate against there.",
+    "The generic read routes take a server-side column filter. It is advertised as the shared ?filter= query parameter on list/count/names/ids for every class -- 204 operations -- and NOT on search, which builds its own where clause from matched ids and cannot honour one. The equivalent trailing path segment (/{class}/list/field=value) still works and wins when both are sent; it is deliberately not a documented path, because OpenAPI cannot mark a path parameter optional and describing it would add 204 paths to a 372-path document."
+  ],
+  "verifiedAgainstLiveServer": {
+    "$status": "NOT RE-VERIFIED for this snapshot",
+    "$note": "The byte-identical live-server diff below was performed against the 1.6.0-beta.4013 document, not this one. It is retained because it establishes that dump-openapi.php reproduces a live document exactly, including the gettext passthrough question. It is NOT evidence about beta.4105. Re-verify against a live server before treating this snapshot as authoritative for anything but code generation.",
+    "priorVerification": {
+      "date": "2026-08-24",
+      "method": "Diffed this snapshot against GET /fog/system/openapi on a server already running the same commit (fog.arrowheaddental.com, FOG 1.6.0-beta.4013), canonically: every object's keys sorted, whitespace removed, compared as one string. Not a spot check of counts -- the whole document, 488016 canonical bytes on each side.",
+      "result": "11/11 checks passed. taskLog holds 56 rows of which 3 carry logHostID=154; ?filter=hostID%3D154 returns recordsFiltered 3 against recordsTotal 56 on /tasklog, /tasklog/count returns 3 and /tasklog/ids returns the three ids.",
+      "gettextNote": "This also settles the _() stub added to dump-openapi.php in the same branch. openapi.class.php wraps its prose in _() 126 times and stock PHP has no gettext, so the dump could not run at all without a passthrough. A passthrough is only correct if the server itself is not translating -- and the byte-identical result against a live server proves it is not.",
+      "priorMethod": "Deployed b25193faf to the maintainer's lab server (FOG 1.6.0-beta.3894, nginx 1.30.4 + PHP 8.3.33 + MariaDB, schema 356) and exercised the filter over HTTPS against real rows, with counts cross-checked directly against the database.",
+      "behaviourChecks": [
+        "GET /tasklog?filter=hostID%3D154 -> recordsFiltered 3; two fields ANDed via ?filter=hostID%3D154%26type%3Derror -> 3; ?filter=hostID%3D999999 -> 0.",
+        "GET /tasklog/list/hostID=154 -> 3, and the segment still wins when a contradicting ?filter= is sent alongside it.",
+        "GET /tasklog?filter=nosuchfield%3D1 -> 400 naming the key; GET /user?filter=password%3Dx -> 400, credential fields refused.",
+        "GET /host/search/fos and /host/search/fos?filter=id%3D999999 return the SAME count: search builds its where clause in PHP and a request filter cannot replace it."
+      ],
+      "note": "The offline generator was re-diffed against the previous snapshot as well: 372 paths, 517 operations and 53 schemas before and after, identical path set, no schema changed shape, and components.parameters gained exactly one entry."
+    }
+  },
+  "changeLog": [
+    {
+      "from": "a1a372674 (1.6.0-beta.4105, 380 paths / 528 operations / 106 schemas)",
+      "to": "b39292372 (1.6.0-beta.4219, 380 paths / 528 operations / 162 schemas)",
+      "summary": "First snapshot from which a generated client actually compiles. Both naming PRs merged upstream, and the dumper was taught the PSR-4 layout that #1415 introduced.",
+      "detail": [
+        "#1408 named the request bodies: components.schemas gained 52 *Join schemas plus BulkEditIds, TaskRequest and NamesRequest. Synthesized request-body model names went 158 -> 2, the two survivors being the multipart uploads.",
+        "#1409 replaced every bare top-level array response with a `data` wrapper, and added ValueList. This is what makes the document compilable at all: AutoRest builds no model for a top-level array, falls back to the Error schema and writes .Count/[0]/foreach against it. 108 operations, 333 compile errors, from a run reporting zero warnings. Verified across five response shapes -- only an object wrapper compiles.",
+        "/system/export also lost format: binary, which AutoRest cannot model. That trade is still open: it costs Export-FogSystem its -OutFile and makes it write the dump to the pipeline instead of a file. See the discussion on #1409.",
+        "x-fog-references is 28 here, down from 29 at beta.4105. Host.archID -> architecture.id disappeared upstream between those builds, which silently removes tab completion for -archID on New-FogHost and Update-FogHost. Not caused by either PR; worth chasing separately.",
+        "schemas 107 -> 162 is the #1408 Join schemas arriving; paths and operations did not move."
+      ]
+    },
+    {
+      "from": "a36810d3c (1.6.0-beta.4013, 372 paths / 517 operations / 53 schemas)",
+      "to": "a1a372674 (1.6.0-beta.4105, 380 paths / 528 operations / 106 schemas)",
+      "summary": "Re-snapshotted so the document is generatable. The previous snapshot predated every generator-facing fix and could not produce a usable client: 0 of its 517 operationIds carried the verb underscore.",
+      "detail": [
+        "#1373 named the operations: 528 of 528 operationIds now carry the underscore every generator splits on (Architecture_List, Host_Create). Before, 0 of 517 did, and AutoRest warned once per operation while emitting 0 Get- cmdlets.",
+        "#1399 named the page a list route returns: components.schemas gained 52 *Page schemas (HostPage, GroupPage), which is most of the 53 -> 106 schema jump. Get-FogHost now declares OutputType IHostPage rather than a synthesized Paths* name.",
+        "#1382 added x-fog-references to foreign-key columns: 29 present here. A live document carries 30 -- the extra one is LDAPGroup.serverID, and plugin classes never appear in an offline dump because no hooks fire.",
+        "Path count 372 -> 380 and operations 517 -> 528. Not audited per-route; this snapshot spans 92 upstream builds.",
+        "x-ms-pageable is deliberately absent. It was attempted and abandoned: it crashes AutoRest with \"Cannot read properties of undefined (reading 'properties')\" whether the page schema is composed or flattened, on all 91 operations or on one, with itemName alone or with both keys. Consequence: nothing generated follows nextUrl, so Get-FogPagedResult remains the only thing preventing silent truncation at MAX_ROWS."
+      ]
+    },
+    {
+      "from": "b25193faf (1.6.0-beta.3894, 372 paths / 517 operations / 53 schemas)",
+      "to": "a36810d3c (1.6.0-beta.4013, 372 paths / 517 operations / 53 schemas)",
+      "summary": "119 builds, and the API surface did not move: same path set, same schema set, no operation added or removed. Three changes, all in authentication and all deliberate.",
+      "detail": [
+        "420623b2a 'feat(api): accept Authorization: Bearer as a standalone API credential' adds a bearerAuth security scheme, and ed597ef8a then repointed it: ADR 0027 makes a Bearer credential a distinct apiTokens row -- SHA-256 hashed at rest, shown once, individually revocable, fog_ prefixed -- rather than a second spelling of users.uAPIToken.",
+        "The global security requirement went from 'fogApiToken+fogUserToken OR basicAuth' to 'bearerAuth OR fogApiToken+fogUserToken OR fogApiToken+basicAuth'. Two changes there, not one: bearerAuth is accepted alone, and basicAuth alone no longer is -- it now needs the server-wide fogApiToken beside it.",
+        "FogApi is unaffected. ADR 0027 is explicit: 'users.uAPIToken is untouched. It stays plaintext, stays visible in the UI, and keeps working as fog-user-token beside fog-api-token. Nothing has to migrate.' The two-header scheme this module sends is the second alternative and still holds.",
+        "a9301a979 'feat(users): API-only accounts that cannot sign in' adds user.apionly, enum ['0','1'], the only new field in 119 builds.",
+        "user.password became readOnly. That is an upstream defect rather than a policy change -- see the writeOnly derivation in Build-FogApiSpec.ps1. Left uncorrected it would have removed -password from New-FogUser and left no way to create a usable account.",
+        "KNOWN STALE UPSTREAM: openapi.class.php's bearerAuth description still describes what 420623b2a shipped and ed597ef8a withdrew -- 'The per-user API token from the API tab ... Sufficient on its own.' The strings fog_, apiTokens, hashed and revocable appear nowhere in the file. A client generated from this document is told to send the credential ADR 0027 stopped accepting. Worth an upstream PR; recorded here so the next re-snapshot does not read it as new."
+      ]
+    },
+    {
+      "from": "7432c9ef7 (1.6.0-beta.3860, 372 paths / 517 operations / 53 schemas)",
+      "to": "b25193faf (1.6.0-beta.3894, 372 paths / 517 operations / 53 schemas)",
+      "summary": "The list filter is now discoverable. Nothing was added or removed -- the only difference is a shared ?filter= parameter on 204 existing operations.",
+      "detail": [
+        "b25193faf \"fix(api): document the list filter, and let it be sent as ?filter=\" adds components.parameters.filter and attaches it to list/count/names/ids on all 51 classes.",
+        "The filter itself is not new. Route::defineRoutes() has always registered those four with a trailing [*:whereItems]? segment, and handleWhereItems() parse_str()s it, checks the keys against the class and refuses credential fields. GET /tasklog/list/hostID=154 has always worked.",
+        "What was wrong was the description: it appeared only on list, only in prose, and said \"accepts field:value pairs\" when parse_str wants field=value -- so the documented form answers 400. That is what #66 recorded as \"no server-side column filter at all\", and why Get-LastImageTime paged the whole of taskLog and filtered client-side.",
+        "search does NOT gain the parameter. It passes its matched ids down as a non-empty array, which the server refuses to let a request filter replace, so advertising one would repeat the defect being fixed.",
+        "No hand-edit beyond openapi.class.php was needed: _listParameters() feeds every generic read operation, so the document self-updates."
+      ]
+    },
+    {
+      "from": "2dc470fed (1.6.0-beta.3820, 394 paths / 545 operations / 53 schemas)",
+      "to": "7432c9ef7 (1.6.0-beta.3860, 372 paths / 517 operations / 53 schemas)",
+      "summary": "Two unrelated upstream narrowings: search is advertised only where it can answer, and the event tables went read-only. No schema changed shape and nothing was added.",
+      "detail": [
+        "4350d5048 'Emit the OpenAPI search route only for classes that have a name field' adds OpenAPI::_isSearchable(), gating /{class}/search/{item} on the same isset($databaseFields['name']) test unisearch() already applies.",
+        "Removed 20 search paths: filedeletequeue, groupassociation, history, hostautologout, hostscreensetting, imageassociation, inventory, ipxe, macaddressassociation, moduleassociation, multicastsessionassociation, nodefailure, powermanagement, printerassociation, snapinassociation, snapingroupassociation, snapinjob, snapintask, tasklog, usertracking.",
+        "70871455c 'fix(api): event tables answer no write verb (ADR 0020 decision 7)' adds history and tasklog to Route::$readOnlyClasses (usertracking was already there, which is why it lost only its search route).",
+        "Removed 8 write operations on those two: POST /history, PUT /history/{id}, DELETE /history/{id}, PUT /history/join and the same four for tasklog. Both /join paths disappear entirely because OpenAPI emits /{class}/join only when the class is writable.",
+        "22 paths and 28 operations removed in total. The search description also gained the sentence naming the extra fields host, storagenode and setting match on.",
+        "Neither commit needed a hand-edit to the document beyond openapi.class.php itself: _paths() generates from $validClasses and writableClasses(), so the document self-updates."
+      ]
+    },
+    {
+      "from": "e83049586 (1.6.0-beta.3789, 401 paths / 54 schemas)",
+      "to": "2dc470fed (1.6.0-beta.3820, 394 paths / 53 schemas)",
+      "summary": "imagingLog retired upstream; taskLog carries the image name.",
+      "detail": [
+        "065b3fe3a feat(logs): retire imagingLog; taskLog carries the image name (ADR 0022) drops 'imaginglog' from Route::$validClasses.",
+        "Removed: the Imaginglog schema and its 7 paths - /imaginglog, /count, /ids, /join, /names, /search/{item}, /{id}.",
+        "Changed: Tasklog gained imageName (9 -> 10 properties). No other schema changed shape and nothing was added.",
+        "That commit did not touch openapi.class.php, correctly: _paths() generates from $validClasses, so the document self-updates."
+      ]
+    }
+  ]
+}

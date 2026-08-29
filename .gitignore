@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# Generated client output is NOT committed.
+#
+# Only the generator configuration, the build scripts, and hand-written code
+# are tracked. The generated surface is reproducible from spec/ and a pinned
+# generator version, and committing it once staged 489 files and 89,374
+# insertions in a single commit in the predecessor repo.
+# ---------------------------------------------------------------------------
+
+# The AutoRest scaffold, EXCEPT custom/ which is hand-written.
+#
+# custom/ is the one directory AutoRest intends to be hand-edited, and it is
+# where the credential layer lives (Connect-FgServer and the SendAsyncStep that
+# carries auth). It exists nowhere else, so it must be committed.
+#
+# Two things keep it safe and both are easy to break:
+#   1. The negation below. Without it, hand-written source is silently never
+#      committed.
+#   2. --clear-output-folder empties the output folder before generating.
+#      Verify it spares custom/ before trusting it with the only copy of
+#      anything. See pwsh/builders/ for where that flag is passed.
+pwsh/src/*
+!pwsh/src/custom/
+
+# The scaffold's former output path, kept ignored deliberately. Moving the
+# output path without this un-ignored a stale generation in the predecessor
+# repo. Anyone passing -OutputFolder by hand can land here again.
+spec/generators/out/
+
+# Python client scaffold, same rule: generated, not committed.
+python/src/*
+!python/src/README.md
+
+# Build artifacts
+**/bin/
+**/obj/
+_module_build/
+dist/
+*.nupkg
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
