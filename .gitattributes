@@ -1,2 +1,22 @@
-# Auto detect text files and perform LF normalization
+# Normalize to LF in the repository, native on checkout.
 * text=auto
+
+# ...except where a CRLF working copy actually breaks something.
+#
+# make.sh is executed by bash. A shebang line ending in CR makes the kernel
+# look for an interpreter named "pwsh\r", which fails with a message naming a
+# path that looks correct. This repo is developed on Windows, so without this
+# rule the Linux/macOS entry point breaks for whoever checks it out there.
+*.sh    text eol=lf
+
+# Python tolerates CRLF, but the file is read byte-for-byte by the interop test
+# and shipped to PyPI, where LF is the convention.
+*.py    text eol=lf
+
+# Data read across languages: the credential payload contract compares bytes.
+*.json  text eol=lf
+
+# Generator output and binaries are not text.
+*.dll   binary
+*.png   binary
+*.jpg   binary
