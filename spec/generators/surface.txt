@@ -1730,7 +1730,7 @@ New-FgFileDeleteQueue -> FogSdk.Models.IFileDeleteQueue
     -StoragegroupId*
 New-FgFileDeleteQueueTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -1760,7 +1760,7 @@ New-FgGroupAssociation -> FogSdk.Models.IGroupAssociation
     -PassThru
 New-FgGroupTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -1827,7 +1827,7 @@ New-FgHostScreenSetting -> FogSdk.Models.IHostScreenSetting
     -Width
 New-FgHostTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -1990,7 +1990,7 @@ New-FgMulticastSessionAssociation -> FogSdk.Models.IMulticastSessionAssociation
     -TaskId*
 New-FgMulticastSessionTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2143,7 +2143,7 @@ New-FgScheduledTask -> FogSdk.Models.IScheduledTask
     -Type*
 New-FgScheduledTaskTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2212,7 +2212,7 @@ New-FgSnapinJob -> FogSdk.Models.ISnapinJob
     -StateId*
 New-FgSnapinJobTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2237,7 +2237,7 @@ New-FgSnapinTask -> FogSdk.Models.ISnapinTask
     -StateId
 New-FgSnapinTaskTask -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
@@ -2302,7 +2302,7 @@ New-FgTask -> FogSdk.Models.ITask
     -Wol
 New-FgTaskQueue -> FogSdk.Models.IListEnvelope
     -Body*
-    -Debug
+    -DebugMode
     -DeploySnapins
     -Id*
     -InputObject*
