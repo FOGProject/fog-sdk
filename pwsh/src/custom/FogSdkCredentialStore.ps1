@@ -52,6 +52,32 @@ function Test-FogSdkCommand {
     no way to write into another user's store. That is least privilege working
     correctly, but it has to be visible or it gets discovered in production.
 #>
+<#
+    Is there a human here to answer a prompt?
+
+    This exists because of a real outage, not a hypothetical. A scheduled task
+    hit a Get-Credential with an empty vault and did NOT fail -- it blocked,
+    until Task Scheduler killed it at its five-minute ExecutionTimeLimit. FOG
+    imaging automation is exactly that shape, so Connect-FgServer must throw a
+    clear error rather than prompt when nobody is there.
+
+    [Environment]::UserInteractive alone is not enough: it reports true for a
+    scheduled task configured to run whether or not a user is logged on. The
+    redirected-stdin check is what actually catches non-interactive hosts.
+#>
+function Test-FogSdkInteractive {
+    [FogSdk.DoNotExport()]
+    [CmdletBinding()]
+    param()
+    process {
+        if (-not [Environment]::UserInteractive) { return $false }
+        if ([Console]::IsInputRedirected) { return $false }
+        # A host with no RawUI cannot prompt either.
+        if ($null -eq $Host -or $null -eq $Host.UI -or $null -eq $Host.UI.RawUI) { return $false }
+        $true
+    }
+}
+
 function Get-FogSdkStoreTier {
     [FogSdk.DoNotExport()]
     [CmdletBinding()]
