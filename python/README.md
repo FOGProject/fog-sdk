@@ -83,9 +83,9 @@ payload : {"v":1,"server":...,"authKind":"bearer","token":...,"user":...}
 
 Both reach the same OS store — Windows Credential Manager, macOS Keychain,
 libsecret — via `keyring`, and fall back to the same file, in the same place,
-with the same permissions, where none is available. `keyring` is an optional
-import: a headless FOG server usually has no D-Bus session, which is the common
-case for this client rather than an edge case.
+with the same permissions, where none is available. That fallback matters more
+than it sounds: a headless FOG server has no D-Bus session, which for an admin
+working over SSH is the common case rather than an edge case.
 
 The contract is asserted by `pwsh/tests/Interop.Tests.ps1`, which round-trips a
 credential in both directions and checks the payloads are byte-identical. The
