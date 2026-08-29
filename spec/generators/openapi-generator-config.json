@@ -1,0 +1,9 @@
+{
+  "packageName": "fogsdk",
+  "projectName": "fogsdk",
+  "packageVersion": "0.1.0",
+  "packageUrl": "https://github.com/FOGProject/fog-sdk",
+  "library": "urllib3",
+  "generateSourceCodeOnly": false,
+  "hideGenerationTimestamp": true
+}

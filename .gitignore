@@ -38,6 +38,13 @@ spec/generators/out/
 python/src/*
 !python/src/README.md
 
+# openapi-generator's CLI writes this to record which generator JAR it pulled.
+# The version is already pinned explicitly in
+# python/builders/Invoke-FogSdkPythonGeneration.ps1, and two places recording
+# the same number is how the cmdlet prefix silently drifted. One source of
+# truth; this file is not it.
+openapitools.json
+
 # Build artifacts
 **/bin/
 **/obj/
